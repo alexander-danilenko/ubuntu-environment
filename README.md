@@ -18,13 +18,13 @@ Setting up a new PHP/Drupal developer machine can be an ad-hoc, manual, and time
 
 ## Usage
 
-### If no wifi drivers needs to be installed.
+### 1. Basic: Just install apps.
 
 - Clone repo on machine with internet connection.
 - Open `config.yml` and adjust for your needs.
 - Run `./post-system-install.sh`
 
-### If WiFi drivers needs to be installed offline
+### 2. Advanced: If Linux Kernel + WiFi drivers needs to be installed first
 
 - Clone repo on machine with internet connection.
 - Open `config.yml` and adjust for your needs.
