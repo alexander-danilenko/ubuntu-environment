@@ -1,0 +1,24 @@
+---
+
+- hosts: 127.0.0.1
+  connection: local
+  vars_files:
+    - ../config.yml
+
+
+  # @TODO: Install zsh before running role.
+  roles:
+    - role: gantsign.antigen
+      users:
+        - username: "{{ ansible_facts.user_id }}"
+          antigen_libraries:
+            - name: oh-my-zsh
+          antigen_theme:
+            name: avit
+          antigen_bundles:
+            # Bundles from the default repo (robbyrussell's oh-my-zsh).
+            - name: git
+            - name: command-not-found
+            # Autosuggestions bundle.
+            - name: zsh-autosuggestions
+              url: zsh-users/zsh-autosuggestions

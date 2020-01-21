@@ -1,0 +1,19 @@
+---
+
+- hosts: 127.0.0.1
+  connection: local
+  vars_files:
+    - ../config.yml
+
+  tasks:
+    - name: Build drivers from source files
+      make:
+        chdir: '../drivers/{{ item.name }}'
+      loop: '{{ drivers }}'
+
+    - name: Install built drivers
+      loop: '{{ drivers }}'
+      sudo: yes
+      make:
+        chdir: '../drivers/{{ item.name }}'
+        target: install

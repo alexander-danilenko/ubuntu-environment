@@ -1,0 +1,31 @@
+---
+
+- hosts: 127.0.0.1
+  connection: local
+  sudo: true
+  vars_files:
+    - ../config.yml
+
+  tasks:
+    - name: Adding apt keys
+      loop: '{{ apt.repos }}'
+      apt_key:
+        url: '{{ item.gpg }}'
+      when: item.gpg is defined
+
+    - name: 'Add PPA repositories.'
+      loop: '{{ apt.repos }}'
+      apt_repository:
+        repo: '{{ item.repo }}'
+        state: present
+        update_cache: true
+
+    - name: 'Install packages...'
+      apt:
+        update_cache: yes
+        pkg: '{{ apt.packages.install.list }}'
+
+    - name: 'Install DEB packages...'
+      loop: '{{ apt.packages.install.deb }}'
+      apt:
+        deb: '{{ item }}'

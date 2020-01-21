@@ -1,0 +1,1 @@
+This directory is used for storing downloaded deb packages that will be installed on post-system-install script.

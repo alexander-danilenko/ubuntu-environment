@@ -1,0 +1,12 @@
+---
+
+- hosts: 127.0.0.1
+  connection: local
+  vars_files:
+    - ../config.yml
+
+  tasks:
+    - git:
+        repo: '{{ item.repo }}'
+        dest: "../drivers/{{ item.name }}"
+      loop: '{{ drivers }}'

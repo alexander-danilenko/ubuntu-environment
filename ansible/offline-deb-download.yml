@@ -1,0 +1,20 @@
+---
+
+- hosts: 127.0.0.1
+  connection: local
+  vars_files:
+    - ../config.yml
+
+  tasks:
+    - name: 'Update apt cache'
+      sudo: true
+      apt:
+        update_cache: true
+
+    - name: 'Install apt-rdepends...'
+      sudo: true
+      apt:
+        pkg: 'apt-rdepends'
+
+    - name: 'Download deb packages with all dependencies for offline usage'
+      raw: 'cd ../deb && apt-get download -q $(apt-rdepends {{ apt.packages.offline.download | join(" ") }} | {{ apt.packages.offline.filters | join(" | ") }} )'

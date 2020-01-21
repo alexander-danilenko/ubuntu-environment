@@ -1,0 +1,6 @@
+- src: gantsign.antigen
+- src: geerlingguy.composer
+- src: geerlingguy.git
+- src: geerlingguy.php
+- src: https://github.com/morgangraphics/ansible-role-nvm
+- src: jaredhocutt.jetbrains_toolbox

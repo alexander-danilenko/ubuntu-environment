@@ -1,0 +1,10 @@
+---
+
+- hosts: 127.0.0.1
+  connection: local
+  sudo: false
+  vars_files:
+    - ../config.yml
+
+  roles:
+      - jaredhocutt.jetbrains_toolbox
