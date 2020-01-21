@@ -17,4 +17,4 @@
         pkg: 'apt-rdepends'
 
     - name: 'Download deb packages with all dependencies for offline usage'
-      raw: 'cd ../deb && apt-get download -q $(apt-rdepends {{ apt.packages.offline.download | join(" ") }} | {{ apt.packages.offline.filters | join(" | ") }} )'
+      raw: 'cd ../deb && apt-get download -q $(apt-rdepends {{ offline.deb.list | join(" ") }} | {{ offline.deb.list_filters | join(" | ") }} )'

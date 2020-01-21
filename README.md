@@ -28,9 +28,9 @@ Setting up a new PHP/Drupal developer machine can be an ad-hoc, manual, and time
 
 - Clone repo on machine with internet connection.
 - Open `config.yml` and adjust for your needs.
-- On a machine with internet connection run `./pre-system-install.sh` command. It will download to repo directory all `deb` packages and drivers required for offline installation.
+- On a machine with internet connection run `./offline-download.sh` command. It will download to repo directory all `deb` packages and drivers required for offline installation.
 - Copy result repo directory to target machine that has no internet connection.
-- Run `./deb-install.sh` for installing all local deb files downloaded previously.
+- Run `./offline-install.sh` for installing all local deb files downloaded previously.
 - Reboot. It's required for switching to newly downloaded kernel.
 - Run `./drivers-make-install.sh` for building drivers from downloaded source files and install it to your system.
 - Reboot. It's required for enabling newly installed drivers.

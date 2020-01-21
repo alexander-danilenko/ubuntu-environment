@@ -87,9 +87,36 @@ apt:
         - grep -v "^perlapi-"
         - grep -v "^perl-openssl-abi-"
 
-# Drivers that needs to be downloaded and installed using `make && sudo make install`.
-drivers:
-  - name: RTL8812AU
-    repo: https://github.com/gordboy/rtl8812au-5.6.4.2
-  - name: RTL8822BU
-    repo: https://github.com/EntropicEffect/rtl8822bu
+# Section for offline dump.
+# This section is used in `pre-system-install` script.
+offline:
+  # Drivers that needs to be downloaded and installed using `make && sudo make install`.
+  drivers:
+    - name: RTL8812AU
+      repo: https://github.com/gordboy/rtl8812au-5.6.4.2
+    - name: RTL8822BU
+      repo: https://github.com/EntropicEffect/rtl8822bu
+  
+  # Offline deb files section.
+  deb:
+    # Following packages will be downloaded with all their dependencies to `./deb` directory.
+    # Select kernels wisely because too recent kernel may not be compatible with drivers you want to download.
+    list:
+      - ansible
+      - linux-image-5.3.0-26-generic
+      - linux-modules-5.3.0-26-generic
+      - linux-modules-extra-5.3.0-26-generic
+      - linux-headers-5.3.0-26-generic
+      - build-essential
+      - exfat-fuse
+      - exfat-utils
+      - net-tools
+    # Usually package has dependencies that has no install candidates. Exclude that kind of packages using grep filters.
+    list_filters:
+      - grep -v "^ "
+      - grep -v "^kldutils$"
+      - grep -v "^libc-dev$"
+      - grep -v "^debconf-"
+      - grep -v "^python3-cffi-backend-api-"
+      - grep -v "^perlapi-"
+      - grep -v "^perl-openssl-abi-"

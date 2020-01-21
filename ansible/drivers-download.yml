@@ -9,4 +9,4 @@
     - git:
         repo: '{{ item.repo }}'
         dest: "../drivers/{{ item.name }}"
-      loop: '{{ drivers }}'
+      loop: '{{ offline.drivers }}'
