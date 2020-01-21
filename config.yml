@@ -1,19 +1,25 @@
+# PHP settings.
 php:
   version: '7.3'
   timezone: 'America/New_York'
+
+# Node settings.
 node:
   version: '12.14.1'
   npm:
+    # List of npm packages that will be installed globally.
     global: [eslint, gulp, bower, eslint-config-google, eslint-config-standard, eslint-config-airbnb, eslint-config-standard, eslint-plugin-jsx-a11y, eslint-plugin-react, eslint-plugin-import]
 
+# APT package manager settings.
 apt:
+  # List of repos that should be added. If repo has gpg key it has to be added as well, otherwise repo will not work. 
   repos:
-    - name: Papirus icon theme
-      repo: 'ppa:papirus/papirus'
-    - name: Numix theme
-      repo: 'ppa:numix/ppa'
     - name: Google Chrome
       repo: 'deb http://dl.google.com/linux/chrome/deb/ stable main'
+    - name: Numix theme
+      repo: 'ppa:numix/ppa'
+    - name: Papirus icon theme
+      repo: 'ppa:papirus/papirus'
     - name: Yarn
       repo: 'deb https://dl.yarnpkg.com/debian/ stable main'
       gpg: 'https://dl.yarnpkg.com/debian/pubkey.gpg'
@@ -22,6 +28,7 @@ apt:
       gpg: 'https://download.sublimetext.com/sublimehq-pub.gpg'
   packages:
     install:
+      # List of apt packages to install. Will be installed with all required dependencies.
       list:
         - curl
         - default-jdk
@@ -44,12 +51,22 @@ apt:
         - transmission
         - vlc
         - zsh
+
+      # List of deb files that should be installed.
       deb:
+        # XnViewMP image viewer.
         - https://download.xnview.com/XnViewMP-linux-x64.deb
+        # Slack chat.
         - https://downloads.slack-edge.com/linux_releases/slack-desktop-4.2.0-amd64.deb
+        # Skype.
         - https://go.skype.com/skypeforlinux-64.deb
+        # Zoom app.
         - https://zoom.us/client/latest/zoom_amd64.deb
+
+    # Offline packages section.
     offline:
+      # Following packages will be downloaded with all their dependencies to `./deb` directory.
+      # List kernels wisely as too recent kernel may not be compatible with drivers listed below.
       download:
         - ansible
         - linux-image-5.3.0-26-generic
@@ -60,6 +77,7 @@ apt:
         - exfat-fuse
         - exfat-utils
         - net-tools
+      # Usually package has dependencies that has no install candidates. Exclude that kind of packages using grep filters.
       filters:
         - grep -v "^ "
         - grep -v "^kldutils$"
@@ -68,6 +86,8 @@ apt:
         - grep -v "^python3-cffi-backend-api-"
         - grep -v "^perlapi-"
         - grep -v "^perl-openssl-abi-"
+
+# Drivers that needs to be downloaded and installed using `make && sudo make install`.
 drivers:
   - name: RTL8812AU
     repo: https://github.com/gordboy/rtl8812au-5.6.4.2
