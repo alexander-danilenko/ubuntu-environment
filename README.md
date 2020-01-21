@@ -18,21 +18,28 @@ Setting up a new PHP/Drupal developer machine can be an ad-hoc, manual, and time
 
 ## Usage
 
-### 1. Basic: Just install apps.
+### Basic: Just provision.
+
+This method is for you if you have internet connection and want to do provision.
 
 - Clone repo on machine with internet connection.
 - Open `config.yml` and adjust for your needs.
-- Run `./install.sh`
+- Run `./install.sh` for system provision
 
-### 2. Advanced: If Linux Kernel + WiFi drivers needs to be installed first
+### Advanced usage with offline cache
 
-- Clone repo on machine with internet connection.
-- Open `config.yml` and adjust for your needs.
-- On a machine with internet connection run `./offline-download.sh` command. It will download to repo directory all `deb` packages and drivers required for offline installation.
-- Copy result repo directory to target machine that has no internet connection.
-- Run `./offline-install.sh` for installing all local deb files downloaded previously.
-- Reboot. It's required for switching to newly downloaded kernel.
-- Run `./drivers-make-install.sh` for building drivers from downloaded source files and install it to your system.
-- Reboot. It's required for enabling newly installed drivers.
-- Connect to internet.
-- Run `./install.sh` for installing the rest.
+This method is for you if you have **no internet connection** and want to install kernel + drivers and then do provision.
+
+1. Download offline cache
+    - Clone repo on machine with internet connection.
+    - Open `config.yml` and adjust for your needs.
+    - On a machine with internet connection run `./offline-download.sh` command. It will download to repo directory all `deb` packages and drivers required for offline installation.
+2. Install offline cache
+    - Copy repo directory with downloaded offline cache to target machine that has no internet connection.
+    - Run `./offline-install.sh` for installing all local deb files downloaded previously.
+    - Reboot. It's required for switching to newly downloaded kernel.
+3. Make and install drivers
+    - Run `./drivers-make-install.sh` for building drivers from downloaded source files and install it to your system.
+    - Reboot. It's required for enabling newly installed drivers.
+    - Connect to internet.
+4. Run `./install.sh` for system provision.
