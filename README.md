@@ -22,7 +22,7 @@ Setting up a new PHP/Drupal developer machine can be an ad-hoc, manual, and time
 
 - Clone repo on machine with internet connection.
 - Open `config.yml` and adjust for your needs.
-- Run `./post-system-install.sh`
+- Run `./install.sh`
 
 ### 2. Advanced: If Linux Kernel + WiFi drivers needs to be installed first
 
@@ -35,4 +35,4 @@ Setting up a new PHP/Drupal developer machine can be an ad-hoc, manual, and time
 - Run `./drivers-make-install.sh` for building drivers from downloaded source files and install it to your system.
 - Reboot. It's required for enabling newly installed drivers.
 - Connect to internet.
-- Run `./post-system-install.sh` for installing the rest.
+- Run `./install.sh` for installing the rest.
