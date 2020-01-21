@@ -5,8 +5,6 @@
   vars_files:
     - ../config.yml
 
-
-  # @TODO: Install zsh before running role.
   roles:
     - role: gantsign.antigen
       users:
@@ -22,3 +20,6 @@
             # Autosuggestions bundle.
             - name: zsh-autosuggestions
               url: zsh-users/zsh-autosuggestions
+            # ZSH nvm.
+            - name: zsh-nvm
+              url: lukechilds/zsh-nvm
