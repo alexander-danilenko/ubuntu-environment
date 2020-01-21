@@ -8,6 +8,7 @@
 
   roles:
     - role: geerlingguy.composer
+      sudo: true
       composer_add_to_path: true
       composer_home_path: '~/.composer'
       composer_path: /usr/local/bin/composer
