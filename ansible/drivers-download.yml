@@ -8,5 +8,5 @@
   tasks:
     - git:
         repo: '{{ item.repo }}'
-        dest: "../drivers/{{ item.name }}"
+        dest: "../offline-cache/drivers/{{ item.name }}"
       loop: '{{ offline.drivers }}'

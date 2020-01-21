@@ -3,5 +3,4 @@
 ansible/roles
 !ansible/roles/requirements.yml
 
-deb/
-drivers/
+offline-cache/*
