@@ -14,7 +14,7 @@ Setting up a new PHP/Drupal developer machine can be an ad-hoc, manual, and time
 
 ## Dependencies
 - K/Ubuntu 19.10+
-- Ansible
+- Ansible (will be installed automatically)
 
 ## Usage
 
