@@ -20,7 +20,6 @@ Setting up a new PHP/Drupal developer machine can be an ad-hoc, manual, and time
 
 ### If no wifi drivers needs to be installed.
 
-- Install ansible using `sudo apt install ansible`
 - Clone repo on machine with internet connection.
 - Open `config.yml` and adjust for your needs.
 - Run `./post-system-install.sh`
