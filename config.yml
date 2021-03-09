@@ -93,6 +93,8 @@ apps:
 
     # Customization
     - papirus-icon-theme
+    - materia-gtk-theme
+    - papirus-icon-theme
 
   flatpak:
     - com.getpostman.Postman # API debugging tool
