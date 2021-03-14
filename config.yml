@@ -71,6 +71,7 @@ apps:
     - dia                  # Diagram editor
     - evolution            # Outlook alternative
     - evolution-ews        # Evolution Exchange support
+    - ffmpeg               # Universal media transcoder tool.
     - flameshot            # Screenshot tool
     - inkscape             # Vector image editor
     - qbittorrent          # Torrent client
@@ -142,7 +143,8 @@ python:
     # List of global packages to install.
     global:
       - awscli # AWS cli.
-      - yq     # Takes YAML input and retrieves data by query.
+      - ffmpeg-normalize # Normalizes audio using ffmpeg.
+      - yq # Takes YAML input and retrieves data by query.
 
 vscode:
   install: yes
