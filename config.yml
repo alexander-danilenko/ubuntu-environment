@@ -99,6 +99,11 @@ apps:
     # - com.rafaelmardojai.Blanket # Listen to different sounds
     # - com.spotify.Client
 
+docker:
+  install: yes
+  docksal:
+    install: yes
+
 php:
   install: yes
   version: 7.4

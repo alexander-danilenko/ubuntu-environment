@@ -370,6 +370,7 @@
     ############ Docker ########################################################
 
     - name: 'Make sure docker apt repo is added'
+      when: docker.install|bool
       become: yes
       apt_repository:
         repo: '{{ apps.repos.docker.repo }}'
@@ -379,6 +380,7 @@
         - docker
     
     - name: 'Install docker apt packages'
+      when: docker.install|bool
       become: yes
       apt:
         pkg:
@@ -402,6 +404,7 @@
 #         - docker
 
     - name: 'Start "docker" service on boot'
+      when: docker.install|bool
       become: yes
       service:
         name: 'docker'
@@ -410,6 +413,7 @@
         - docker
 
     - name: 'Restart "docker" service'
+      when: docker.install|bool
       become: yes
       service:
         name: 'docker'
@@ -418,6 +422,7 @@
         - docker
 
     - name: 'Make sure current user added to "docker" group'
+      when: docker.install|bool
       become: yes
       user:
         name: '{{ ansible_user }}'
@@ -427,6 +432,7 @@
         - docker
 
     - name: Reset connection to use "docker" user group
+      when: docker.install|bool
       meta: reset_connection
       tags:
         - docker
@@ -434,6 +440,7 @@
     ############ Docksal #######################################################
 
     - name: 'Install Docksal'
+      when: docker.install|bool and docker.docksal.install|bool
       shell: 'curl -o- https://get.docksal.io | bash'
       environment:
         DOCKSAL_CONFIRM_YES: 1 # Force answer "y" to all y/n Docksal questions.  
@@ -449,7 +456,7 @@
     # for docker that is not compatible with Ubuntu. After that APT appears
     # broken. Just re-adding repos with original values will fix it.
     - name: 'Remove incompatible Docker apt repo'
-      when: docksal_install_ran.changed == true
+      when: docker.install|bool and docker.docksal.install|bool and docksal_install_ran.changed == true
       become: yes
       apt_repository:
         repo: 'deb [arch=amd64] https://download.docker.com/linux/debian bullseye stable'
@@ -461,7 +468,7 @@
         - docksal
 
     - name: 'Fix docker repo that may appear broken after docksal installation'
-      when: docksal_install_ran.changed == true
+      when: docker.install|bool and docker.docksal.install|bool and docksal_install_ran.changed == true
       become: yes
       apt_repository:
         repo: '{{ apps.repos.docker.repo }}'
