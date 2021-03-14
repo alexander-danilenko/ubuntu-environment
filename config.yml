@@ -10,9 +10,6 @@ apps:
     google-chrome:
       repo: 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main'
       gpg: 'https://dl-ssl.google.com/linux/linux_signing_key.pub'
-    nordvpn:
-      repo: 'deb https://repo.nordvpn.com/deb/nordvpn/debian stable main'
-      gpg: 'https://repo.nordvpn.com/gpg/nordvpn_public.asc'
     slack:
       repo: 'deb https://packagecloud.io/slacktechnologies/slack/debian/ jessie main'
       gpg: 'https://packagecloud.io/slacktechnologies/slack/gpgkey'
@@ -76,7 +73,6 @@ apps:
     - evolution-ews        # Evolution Exchange support
     - flameshot            # Screenshot tool
     - inkscape             # Vector image editor
-    - nordvpn              # NordVPN client
     - qbittorrent          # Torrent client
     - slack-desktop        # Slack Chat
     - sublime-merge        # Git GUI
