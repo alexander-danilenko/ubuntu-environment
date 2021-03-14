@@ -103,6 +103,7 @@ docker:
   install: yes
   docksal:
     install: yes
+    healthcheck: 5m
 
 php:
   install: yes
