@@ -136,6 +136,7 @@ node:
       - flow
       - flow-bin
       - gulp
+      - http-server
       - lsp
       - typescript
       - vscode-css-languageserver-bin
