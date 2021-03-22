@@ -21,12 +21,12 @@ apps:
 
   # List of *.deb URLs to install.
   deb:
+   - https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
+   - https://download.xnview.com/XnViewMP-linux-x64.deb
+   - https://fortinetweb.s3.amazonaws.com/forticlient/downloads/FortiClientFullVPNInstaller_6.4.3.0959_amd64.deb
    - https://global.download.synology.com/download/Utility/SynologyDriveClient/2.0.4-11112/Ubuntu/Installer/x86_64/synology-drive-client-11112.x86_64.deb
    - https://repo.skype.com/latest/skypeforlinux-64.deb
    - https://zoom.us/client/latest/zoom_amd64.deb
-   - https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
-   - https://fortinetweb.s3.amazonaws.com/forticlient/downloads/FortiClientFullVPNInstaller_6.4.3.0959_amd64.deb
-   - https://download.xnview.com/XnViewMP-linux-x64.deb
 
   # List of apt packages to install.
   apt:
