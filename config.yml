@@ -75,11 +75,11 @@ apps:
     - ffmpeg               # Universal media transcoder tool.
     - flameshot            # Screenshot tool
     - inkscape             # Vector image editor
-    - qbittorrent          # Torrent client
     - slack-desktop        # Slack Chat
     - sublime-merge        # Git GUI
     - sublime-text         # Text/code editor
     - telegram-desktop     # Best IM
+    - transmission         # Torrent client
     - vlc                  # Legend!
 
     # KDE apps
