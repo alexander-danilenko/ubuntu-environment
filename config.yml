@@ -82,11 +82,11 @@ apps:
     - vlc                  # Legend!
 
     # KDE apps
-    - kompare  # File difference viewer
-    - krename  # Batch renamer for KDE
-    - krusader # Two-panel file manager
-    - okular   # Universal document viewer
-    - yakuake  # Quake-style dropdown terminal
+    #- kompare  # File difference viewer
+    #- krename  # Batch renamer for KDE
+    #- krusader # Two-panel file manager
+    #- okular   # Universal document viewer
+    #- yakuake  # Quake-style dropdown terminal
 
   flatpak:
     - com.getpostman.Postman # API debugging tool
