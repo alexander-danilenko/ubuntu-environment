@@ -36,6 +36,7 @@ apps:
     - default-jre # Java runtime
     - exfat-fuse  # Read and write exFAT driver
     - exfat-utils # Utilities to create, check, label and dump exFAT file system 
+    - grub-customizer  # GUI for GRUB settings management
     - heif-gdk-pixbuf  # Apple HEIF/HEIC decoder support 
     - heif-thumbnailer # Apple HEIF/HEIC thumbnails support 
     - htop        # Terminal system monitor
@@ -47,7 +48,6 @@ apps:
     - stacer      # Cool CleanMyMac alternative
     - traceroute  # Traces the route taken by packets over an IPv4/IPv6 network
     - tree        # Displays an indented directory tree, in color
-    - grub-customizer # GUI for GRUB settings management
   
     # Archive formats support
     - arj         # arj archiver
