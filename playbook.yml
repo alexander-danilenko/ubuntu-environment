@@ -291,7 +291,7 @@
 
     - name: 'Set default node version'
       when: node.install|bool
-      shell: '. $HOME/.profile && nvm alias default {{ node.defaultVersion | default("--lts") }}'
+      shell: '. $HOME/.profile && nvm alias default {{ node.defaultVersion | default("node") }}'
       args:
         executable: '/bin/bash'
       tags:
