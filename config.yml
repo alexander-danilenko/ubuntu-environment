@@ -118,9 +118,14 @@ php:
 
 node:
   install: yes
-  version: '--lts' # Use current LTS version.
+  # List of node versions to install.
+  versions: 
+    - 14
+    - 12
+    - 10
+  defaultVersion: node # Latest installed node version.
   npm:
-    # List of global npm packages to install.
+    # List of global npm packages to install for default node.
     global: 
       - bower
       - eslint

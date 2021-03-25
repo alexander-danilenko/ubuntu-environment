@@ -279,9 +279,19 @@
         - node
         - nvm
 
-    - name: 'Install node'
+    - name: 'Install node versions'
       when: node.install|bool
-      shell: '. $HOME/.profile && nvm install {{ node.version | default("--lts") }} && nvm use {{ node.version | default("--lts") }}'
+      loop: '{{ node.versions }}'
+      shell: '. $HOME/.profile && nvm install {{ item }}'
+      args:
+        executable: '/bin/bash'
+      tags:
+        - node
+        - nvm
+
+    - name: 'Set default node version'
+      when: node.install|bool
+      shell: '. $HOME/.profile && nvm alias default {{ node.defaultVersion | default("--lts") }}'
       args:
         executable: '/bin/bash'
       tags:
