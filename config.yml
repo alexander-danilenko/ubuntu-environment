@@ -109,6 +109,8 @@ php:
   # @TODO: Add composer version select: v1 or v2.
   composer:
     # List of global composer packages to install.
+    #
+    # NOTE: All the following packages will be installed using `consolidation/cgr`.
     global:
       - drush/drush
       - squizlabs/php_codesniffer
