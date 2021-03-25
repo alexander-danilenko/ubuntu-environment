@@ -488,12 +488,16 @@
         - docker
         - docksal
 
-    - name: 'Set healthcheck interval for docksal containers'
-      when: docker.install|bool and docker.docksal.install|bool
+    - name: 'Set docksal settings'
+      when: |
+        docker.install|bool
+        and docker.docksal.install|bool
+        and docker.docksal.settings is defined
+      loop: '{{ docker.docksal.settings | default({}) | dict2items }}'
       lineinfile:
         path: ~/.docksal/docksal.env
-        regexp: '^DOCKSAL_CONTAINER_HEALTHCHECK_INTERVAL'
-        line: DOCKSAL_CONTAINER_HEALTHCHECK_INTERVAL={{ docker.docksal.healthcheck }}
+        regexp: '^{{ item.key }}'
+        line: '{{ item.key }}={{ item.value }}'
       tags:
         - docker
         - docksal
