@@ -236,23 +236,14 @@
         - php
         - composer
 
-    - name: 'Enable "Drupal" code sniffer standard'
+    - name: 'Enable Drupal code sniffer standards'
       when: php.install|bool and php.composer.global is defined and 'drupal/coder' in php.composer.global and 'squizlabs/php_codesniffer' in php.composer.global
-      file:
-        state: 'link'
-        src: '$HOME/.composer/global/drupal/coder/vendor/drupal/coder/coder_sniffer/Drupal'
-        dest: '$HOME/.composer/global/squizlabs/php_codesniffer/vendor/squizlabs/php_codesniffer/src/Standards/Drupal'
-      tags:
-        - php
-        - composer
-        - drupal
-
-    - name: 'Enable "DrupalPractice" code sniffer standard'
-      when: php.install|bool and php.composer.global is defined and 'drupal/coder' in php.composer.global and 'squizlabs/php_codesniffer' in php.composer.global
-      file:
-        state: 'link'
-        src: '$HOME/.composer/global/drupal/coder/vendor/drupal/coder/coder_sniffer/DrupalPractice'
-        dest: '$HOME/.composer/global/squizlabs/php_codesniffer/vendor/squizlabs/php_codesniffer/src/Standards/DrupalPractice'
+      synchronize:
+        src: '{{ item }}'
+        dest: '~/.composer/global/squizlabs/php_codesniffer/vendor/squizlabs/php_codesniffer/src/Standards'
+      with_items:
+        - '~/.composer/global/drupal/coder/vendor/drupal/coder/coder_sniffer/Drupal'
+        - '~/.composer/global/drupal/coder/vendor/drupal/coder/coder_sniffer/DrupalPractice'
       tags:
         - php
         - composer
