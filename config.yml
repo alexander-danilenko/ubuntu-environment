@@ -45,6 +45,7 @@ apps:
     - neofetch    # Shows Linux System Information with Distribution Logo
     - net-tools   # Base network tools
     - nfs-common  # Package for work with NFS shares
+    - openfortivpn # Corporate VPN open source alternative.
     - stacer      # Cool CleanMyMac alternative
     - traceroute  # Traces the route taken by packets over an IPv4/IPv6 network
     - tree        # Displays an indented directory tree, in color
