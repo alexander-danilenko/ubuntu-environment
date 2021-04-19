@@ -201,3 +201,7 @@ vscode:
 jetbrains:
   toolbox:
     install: yes
+
+cloud:
+  aws: # AWS CLI v2
+    install: yes
