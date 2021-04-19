@@ -9,19 +9,21 @@
     ############ Extend fs.inotify.max_user_watches value ######################
     # @see https://confluence.jetbrains.com/display/IDEADEV/Inotify+Watches+Limit
 
-    - name: Extend echo fs.inotify.max_user_watches
+    - name: Extend fs.inotify.max_user_watches
       become: yes
       lineinfile:
         path: /etc/sysctl.conf
         regexp: '^fs.inotify.max_user_watches'
         line: fs.inotify.max_user_watches = 524288
+      register: inotify
       tags:
         - shell
         - inotify
 
     - name: 'Read new values from /etc/sysctl.conf'
       become: yes
-      shell: 'sudo sysctl -p'
+      when: inotify.changed
+      shell: 'sysctl -p'
       args:
         executable: '/bin/bash'
       tags:
@@ -30,12 +32,31 @@
 
     ############ Copy "./dotfiles" directory ###################################
 
-    - name: 'Copy "./dotfiles" directory to $HOME'
-      copy:
+    - name: 'Copy "./dotfiles" contents to user home directory'
+      synchronize:
         src: './dotfiles/'
-        dest: '$HOME'
-        backup: no # Do not make backup copies of files.
-        force: yes
+        dest: '~'
+        recursive: yes
+        compress: no
+      register: home_dir_copied
+      tags:
+        - home
+        
+    - name: 'Create home directories'
+      file:
+        state: directory
+        path: '{{ item }}'
+      with_items:
+        - '~/.local/bin'
+      tags:
+        - home
+
+    - name: 'Reset fonts cache'
+      become: no
+      when: home_dir_copied.changed
+      shell: 'fc-cache -f -v'
+      args:
+        executable: '/bin/bash'
       tags:
         - home
 
@@ -53,7 +74,7 @@
         - shell
         - zsh
 
-    - name: 'Install "zsh" apt package'
+    - name: 'Install "zsh" package'
       become: true
       apt:
         name: 'zsh'
@@ -63,7 +84,7 @@
 
     - name: 'Create ~/.antigen directory'
       file:
-        path: '$HOME/.antigen'
+        path: '~/.antigen'
         state: 'directory'
       tags:
         - shell
@@ -73,7 +94,7 @@
     - name: 'Download Antigen'
       get_url:
         url: 'https://git.io/antigen'
-        dest: '$HOME/.antigen/antigen.zsh'
+        dest: '~/.antigen/antigen.zsh'
       tags:
         - shell
         - zsh
@@ -203,44 +224,61 @@
       when: php.install|bool
       get_url:
         url: 'https://getcomposer.org/composer-stable.phar'
-        dest: '$HOME/.local/bin/composer'
+        dest: '~/.local/bin/composer'
         mode: '0755'
       tags:
         - php
         - composer
 
-    - name: 'Create "~/.composer" directory'
+    - name: 'Create "~/.composer" directories'
       when: php.install|bool
       file:
-        path: '$HOME/.composer'
+        path: '{{ item }}'
         state: 'directory'
+      with_items:
+        - '~/.composer'
+        - '~/.composer/global'
       tags:
         - php
         - composer
 
     - name: 'Install "cgr/consolidation" global package'
-      when: php.composer.global is defined
-      shell: '. $HOME/.profile && composer global require consolidation/cgr'
+      when: php.install|bool and php.composer.global is defined
+      shell: '. ~/.profile && composer global require consolidation/cgr'
       args:
         executable: '/bin/bash'
+        creates: '~/.composer/vendor/bin/cgr'
+      tags:
+        - php
+        - composer
+
+    - name: 'List composer global packages installed'
+      when: php.install|bool and php.composer.global is defined
+      shell: 'tree ~/.composer/global -d -f -L 2'
+      register: composer_global_packages
       tags:
         - php
         - composer
 
     - name: 'Install global packages using "cgr"'
-      when: php.install|bool and php.composer.global is defined
-      shell: '. $HOME/.profile && cgr {{ php.composer.global | join(" ") }}'
+      when: |
+        php.install|bool
+        and php.composer.global is defined
+        and composer_global_packages.stdout.find(item) == -1
+      loop: '{{ php.composer.global }}'
+      shell: '. ~/.profile && cgr {{ item }}'
       args:
         executable: '/bin/bash'
       tags:
         - php
         - composer
 
-    - name: 'Enable Drupal code sniffer standards'
+    - name: 'Enable "Drupal" code sniffer standards'
       when: php.install|bool and php.composer.global is defined and 'drupal/coder' in php.composer.global and 'squizlabs/php_codesniffer' in php.composer.global
       synchronize:
         src: '{{ item }}'
         dest: '~/.composer/global/squizlabs/php_codesniffer/vendor/squizlabs/php_codesniffer/src/Standards'
+        recursive: yes
       with_items:
         - '~/.composer/global/drupal/coder/vendor/drupal/coder/coder_sniffer/Drupal'
         - '~/.composer/global/drupal/coder/vendor/drupal/coder/coder_sniffer/DrupalPractice'
@@ -270,10 +308,19 @@
         - node
         - nvm
 
-    - name: 'Install node versions'
+    - name: 'List node versions installed'
       when: node.install|bool
+      shell: '. ~/.profile && nvm ls --no-alias --no-colors'
+      register: node_versions_installed
+      ignore_errors: yes
+      tags:
+        - node
+        - nvm
+
+    - name: 'Install node versions'
+      when: node.install|bool and node_versions_installed.stdout.find('v{{ item }}') == -1
       loop: '{{ node.versions }}'
-      shell: '. $HOME/.profile && nvm install {{ item }}'
+      shell: '. ~/.profile && nvm install {{ item }}'
       args:
         executable: '/bin/bash'
       tags:
@@ -282,16 +329,30 @@
 
     - name: 'Set default node version'
       when: node.install|bool
-      shell: '. $HOME/.profile && nvm alias default {{ node.defaultVersion | default("node") }}'
+      shell: '. ~/.profile && nvm alias default {{ node.defaultVersion | default("node") }}'
       args:
         executable: '/bin/bash'
       tags:
         - node
         - nvm
 
+    - name: 'List installed global packages'
+      shell: '. ~/.profile && npm list --global --depth=0'
+      args:
+        executable: '/bin/bash'
+      register: npm_global_packages
+      ignore_errors: yes
+      tags:
+        - node
+        - nvm
+
     - name: 'Install global npm packages'
-      when: node.install|bool and node.npm.global is defined
-      shell: '. $HOME/.profile && npm install -g {{ node.npm.global | join(" ") }}'
+      when: |
+        node.install|bool
+        and node.npm.global is defined
+        and npm_global_packages.stdout.find(item) == -1
+      loop: '{{ node.npm.global }}'
+      shell: '. ~/.profile && npm install --global {{ item }}'
       args:
         executable: '/bin/bash'
       tags:
@@ -306,11 +367,12 @@
       become: yes
       apt:
         name:
-          - 'python3-pip'
           - 'python{{ python.version }}'
           - 'python{{ python.version }}-dev'
           - 'python{{ python.version }}-doc'
           - 'python{{ python.version }}-minimal'
+          - 'python3-pip'
+          - 'pipenv'
       tags:
         - python
 
@@ -338,7 +400,7 @@
       when: vscode.install|bool
       copy:
         src: './dotfiles/.config/Code/User/settings.json'
-        dest: '$HOME/.config/Code/User/settings.json'
+        dest: '~/.config/Code/User/settings.json'
         backup: no
       tags:
         - vscode
