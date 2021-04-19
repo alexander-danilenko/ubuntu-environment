@@ -28,4 +28,7 @@ if (( ${#MISSING_PREREQUISITES[@]} )); then
   sudo apt-get install -y -q ${MISSING_PREREQUISITES[*]} >/dev/null
 fi
 
+# Download dotfiles as git submodules.
+git submodule update --init --remote --force ./dotfiles/
+
 ansible-playbook playbook.yml --ask-become-pass "$@"
