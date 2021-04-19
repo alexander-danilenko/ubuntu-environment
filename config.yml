@@ -100,6 +100,7 @@ apps:
   flatpak:
     - com.getpostman.Postman # API debugging tool
     - com.github.johnfactotum.Foliate # eBook reader
+    - com.viber.Viber # Viber messanger
     # - com.discordapp.Discord
     # - com.rafaelmardojai.Blanket # Listen to different sounds
     # - com.spotify.Client
