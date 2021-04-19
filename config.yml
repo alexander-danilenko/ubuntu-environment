@@ -1,21 +1,12 @@
 apps:
   # List of 3rd party apt repos to add.
   repos:
-    vscode:
-      repo: 'deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main'
-      gpg: 'https://packages.microsoft.com/keys/microsoft.asc'
-    docker:
-      repo: 'deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable'
-      gpg: 'https://download.docker.com/linux/ubuntu/gpg'
     google-chrome:
       repo: 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main'
       gpg: 'https://dl-ssl.google.com/linux/linux_signing_key.pub'
     slack:
       repo: 'deb https://packagecloud.io/slacktechnologies/slack/debian/ jessie main'
       gpg: 'https://packagecloud.io/slacktechnologies/slack/gpgkey'
-    php:
-      repo: 'deb http://ppa.launchpad.net/ondrej/php/ubuntu focal main'
-      gpg: 'https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x14aa40ec0831756756d7f66c4f4ea0aae5267a6c'
     sublime:
       repo: 'deb https://download.sublimetext.com/ apt/stable/'
       gpg: 'https://download.sublimetext.com/sublimehq-pub.gpg'

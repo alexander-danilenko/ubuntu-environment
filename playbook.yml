@@ -202,6 +202,25 @@
 
     ############ Install PHP + composer + global packages ######################
 
+    - name: 'Add PHP apt repo key'
+      when: php.install|bool
+      become: yes
+      apt_key:
+        url: 'https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x14aa40ec0831756756d7f66c4f4ea0aae5267a6c'
+      tags:
+        - php
+
+    - name: 'Add PHP apt repo'
+      when: php.install|bool
+      become: yes
+      apt_repository:
+        repo: 'deb http://ppa.launchpad.net/ondrej/php/ubuntu focal main'
+        filename: 'php'
+        state: 'present'
+        update_cache: yes
+      tags:
+        - php
+
     - name: 'Install PHP apt packages'
       when: php.install|bool
       become: yes
@@ -387,6 +406,25 @@
 
     ############ Install and configure vscode ##################################
 
+    - name: 'Add Visual Studio Code apt repo key'
+      when: vscode.install|bool
+      become: yes
+      apt_key:
+        url: 'https://packages.microsoft.com/keys/microsoft.asc'
+      tags:
+        - vscode
+
+    - name: 'Add Visual Studio Code apt repo'
+      when: vscode.install|bool
+      become: yes
+      apt_repository:
+        repo: 'deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main'
+        filename: 'vscode'
+        state: 'present'
+        update_cache: yes
+      tags:
+        - vscode
+
     - name: 'Install "code" apt package'
       when: vscode.install|bool
       become: yes
@@ -440,13 +478,22 @@
 
     ############ Docker ########################################################
 
-    - name: 'Make sure docker apt repo is added'
+    - name: 'Add docker apt repo key'
+      when: docker.install|bool
+      become: yes
+      apt_key:
+        url: 'https://download.docker.com/linux/ubuntu/gpg'
+      tags:
+        - docker
+
+    - name: 'Add docker apt repo'
       when: docker.install|bool
       become: yes
       apt_repository:
-        repo: '{{ apps.repos.docker.repo }}'
+        repo: 'deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable'
         filename: 'docker'
         state: 'present'
+        update_cache: yes
       tags:
         - docker
     
@@ -534,17 +581,6 @@
         filename: 'docker'
         state: 'absent'
         update_cache: no
-      tags:
-        - docker
-        - docksal
-
-    - name: 'Fix docker repo that may appear broken after docksal installation'
-      when: docker.install|bool and docker.docksal.install|bool and docksal_install_ran.changed == true
-      become: yes
-      apt_repository:
-        repo: '{{ apps.repos.docker.repo }}'
-        filename: 'docker'
-        state: 'present'
       tags:
         - docker
         - docksal
