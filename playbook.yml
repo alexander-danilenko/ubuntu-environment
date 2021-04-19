@@ -28,11 +28,11 @@
         - shell
         - inotify
 
-    ############ Copy "./home" directory #######################################
+    ############ Copy "./dotfiles" directory ###################################
 
-    - name: 'Copy "./home" directory to $HOME'
+    - name: 'Copy "./dotfiles" directory to $HOME'
       copy:
-        src: './home/'
+        src: './dotfiles/'
         dest: '$HOME'
         backup: no # Do not make backup copies of files.
         force: yes
