@@ -160,7 +160,7 @@ node:
 
 python:
   install: yes
-  version: 3.8
+  version: 3.9
   pip3:
     # List of global packages to install.
     global:
