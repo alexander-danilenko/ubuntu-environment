@@ -1,6 +1,12 @@
-![Logo](./logo.svg)
+<p align="center">
+  <img src="https://cdn.svgporn.com/logos/ubuntu.svg" width="128" />
+</p>
 
-This repo contains [Ansible](https://www.ansible.com/) script for fast and easy web developer environment setup on [Ubuntu](https://ubuntu.com/) and destributions based on it.
+<h1 align="center">
+  Ubuntu environment
+</h1>
+
+This repo contains [Ansible](https://www.ansible.com/) script for fast and easy DevOps/Web Developer environment setup on [Ubuntu](https://ubuntu.com/) and destributions based on it.
 
 ## TL;DR
 
@@ -30,7 +36,7 @@ Following tools will be installed:
 
 ## Requirements
 
-- **Ubuntu 20.04**
+<img src="https://cdn.svgporn.com/logos/ubuntu.svg" height="12" /> **Ubuntu 20.04**
 
 **Ubuntu** here means [Ubuntu](https://ubuntu.com/) itself and all its flavors and distributions based on certain Ubuntu version like: Kubuntu, Lubuntu, Xubuntu, Linux Mint, Pop!\_OS, elementary OS, Zorin OS, etc.
 
