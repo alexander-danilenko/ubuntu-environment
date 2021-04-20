@@ -205,3 +205,9 @@ jetbrains:
 cloud:
   aws: # AWS CLI v2
     install: yes
+  gcloud:
+    install: yes
+    packages:
+      - google-cloud-sdk
+      - google-cloud-sdk-minikube
+      - kubectl

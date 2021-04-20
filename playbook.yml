@@ -610,6 +610,7 @@
         creates: /tmp/aws
         mode: 0755
       tags:
+        - cloud
         - aws
 
     - name: 'Install AWS CLI v2'
@@ -621,4 +622,38 @@
       become: true
       register: aws_install
       tags:
+        - cloud
         - aws
+
+    ############ Google Cloud SDK ##############################################
+
+    - name: 'Add Google Cloud SDK apt repo key'
+      when: cloud.gcloud.install|bool
+      become: yes
+      apt_key:
+        url: 'https://packages.cloud.google.com/apt/doc/apt-key.gpg'
+        keyring: /usr/share/keyrings/cloud.google.gpg
+      tags:
+        - cloud
+        - gcloud
+
+    - name: 'Add Google Cloud SDK apt repo'
+      when: cloud.gcloud.install|bool
+      become: yes
+      apt_repository:
+        repo: 'deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main'
+        filename: 'google-cloud-sdk'
+        state: 'present'
+        update_cache: yes
+      tags:
+        - cloud
+        - gcloud
+    
+    - name: 'Install Google Cloud SDK apt packages'
+      when: cloud.gcloud.install|bool
+      become: yes
+      apt:
+        pkg: '{{ cloud.gcloud.packages }}'
+      tags:
+        - cloud
+        - gcloud
