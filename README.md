@@ -23,14 +23,19 @@ Setting up a new developer machine can be an ad-hoc, manual, and time-consuming 
 
 Following tools will be installed:
 
-- <img src="https://cdn.svgporn.com/logos/nodejs-icon.svg" height="12"> **Node.JS** (via [nvm](https://github.com/nvm-sh/nvm)) with global **npm** packages
-- <img src="https://cdn.svgporn.com/logos/php.svg" height="12"> **PHP** +  <img src="https://cdn.svgporn.com/logos/composer.svg" height="12"> **Composer** with global packages
-- <img src="https://cdn.svgporn.com/logos/python.svg" height="12"> **Python** + **PIP** with global packages
-- <img src="https://cdn.svgporn.com/logos/visual-studio-code.svg" height="12"> **Visual Studio Code** with extensions and themes
+- <img src="https://cdn.svgporn.com/logos/nodejs-icon.svg" height="12"> **Node.JS** (via [node version manager](https://github.com/nvm-sh/nvm)) + global **npm** packages
+- <img src="https://cdn.svgporn.com/logos/php.svg" height="12"> **PHP** +  <img src="https://cdn.svgporn.com/logos/composer.svg" height="12"> **Composer** + global packages
+- <img src="https://cdn.svgporn.com/logos/python.svg" height="12"> **Python** + **PIP** + global packages
+- <img src="https://cdn.svgporn.com/logos/visual-studio-code.svg" height="12"> **Visual Studio Code** + extensions and themes
 - <img src="https://cdn.svgporn.com/logos/jetbrains.svg" height="12"> **JetBrains Toolbox**
 - <img src="https://cdn.svgporn.com/logos/postman.svg" height="12"> **Postman**
 - <img src="https://cdn.svgporn.com/logos/docker-icon.svg" height="12"> **Docker** + [**Docksal**](https://docksal.io/)
-- **zsh** + [antigen](https://github.com/zsh-users/antigen) + [gorilla config](home/.zshrc)
+- Cloud tools:
+  - <img src="https://cdn.svgporn.com/logos/kubernetes.svg" height="12"> **Kubernetes** + Minikube
+  - <img src="https://cdn.svgporn.com/logos/google-cloud.svg" height="12"> **Google Cloud SDK**
+  - <img src="https://cdn.svgporn.com/logos/aws.svg" height="12"> **AWS CLI v2**
+
+- **zsh** + [antigen](https://github.com/zsh-users/antigen)
 - CLI utilities and tools
 - Office, Media apps, Internet apps and many-many more (see [`config.yml`](config.yml) file).
 
