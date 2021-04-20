@@ -29,7 +29,7 @@ Following tools will be installed:
 - <img src="https://cdn.svgporn.com/logos/visual-studio-code.svg" height="14"> **Visual Studio Code** + extensions and themes
 - <img src="https://cdn.svgporn.com/logos/jetbrains.svg" height="14"> **JetBrains Toolbox**
 - <img src="https://cdn.svgporn.com/logos/postman.svg" height="14"> **Postman**
-- <img src="https://cdn.svgporn.com/logos/docker-icon.svg" height="14"> **Docker** + [**Docksal**](https://docksal.io/)
+- <img src="https://cdn.svgporn.com/logos/docker-icon.svg" height="14"> **Docker** + <img src="https://d33wubrfki0l68.cloudfront.net/96d4dedb7aa3fbf371d01d3356a97ec463b23e04/ca713/images/docksal-mark-color.svg" height="14"> [**Docksal**](https://docksal.io/)
 - Cloud tools:
   - <img src="https://cdn.svgporn.com/logos/kubernetes.svg" height="14"> **Kubernetes** + Minikube
   - <img src="https://cdn.svgporn.com/logos/google-cloud.svg" height="14"> **Google Cloud SDK**
