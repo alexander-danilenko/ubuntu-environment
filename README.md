@@ -23,17 +23,17 @@ Setting up a new developer machine can be an ad-hoc, manual, and time-consuming 
 
 Following tools will be installed:
 
-- <img src="https://cdn.svgporn.com/logos/nodejs-icon.svg" height="12"> **Node.JS** (via [node version manager](https://github.com/nvm-sh/nvm)) + global **npm** packages
-- <img src="https://cdn.svgporn.com/logos/php.svg" height="12"> **PHP** +  <img src="https://cdn.svgporn.com/logos/composer.svg" height="12"> **Composer** + global packages
-- <img src="https://cdn.svgporn.com/logos/python.svg" height="12"> **Python** + **PIP** + global packages
-- <img src="https://cdn.svgporn.com/logos/visual-studio-code.svg" height="12"> **Visual Studio Code** + extensions and themes
-- <img src="https://cdn.svgporn.com/logos/jetbrains.svg" height="12"> **JetBrains Toolbox**
-- <img src="https://cdn.svgporn.com/logos/postman.svg" height="12"> **Postman**
-- <img src="https://cdn.svgporn.com/logos/docker-icon.svg" height="12"> **Docker** + [**Docksal**](https://docksal.io/)
+- <img src="https://cdn.svgporn.com/logos/nodejs-icon.svg" height="14"> **Node.JS** (via [node version manager](https://github.com/nvm-sh/nvm)) + global **npm** packages
+- <img src="https://cdn.svgporn.com/logos/php.svg" height="14"> **PHP** +  <img src="https://cdn.svgporn.com/logos/composer.svg" height="14"> **Composer** + global packages
+- <img src="https://cdn.svgporn.com/logos/python.svg" height="14"> **Python** + **PIP** + global packages
+- <img src="https://cdn.svgporn.com/logos/visual-studio-code.svg" height="14"> **Visual Studio Code** + extensions and themes
+- <img src="https://cdn.svgporn.com/logos/jetbrains.svg" height="14"> **JetBrains Toolbox**
+- <img src="https://cdn.svgporn.com/logos/postman.svg" height="14"> **Postman**
+- <img src="https://cdn.svgporn.com/logos/docker-icon.svg" height="14"> **Docker** + [**Docksal**](https://docksal.io/)
 - Cloud tools:
-  - <img src="https://cdn.svgporn.com/logos/kubernetes.svg" height="12"> **Kubernetes** + Minikube
-  - <img src="https://cdn.svgporn.com/logos/google-cloud.svg" height="12"> **Google Cloud SDK**
-  - <img src="https://cdn.svgporn.com/logos/aws.svg" height="12"> **AWS CLI v2**
+  - <img src="https://cdn.svgporn.com/logos/kubernetes.svg" height="14"> **Kubernetes** + Minikube
+  - <img src="https://cdn.svgporn.com/logos/google-cloud.svg" height="14"> **Google Cloud SDK**
+  - <img src="https://cdn.svgporn.com/logos/aws.svg" height="14"> **AWS CLI v2**
 
 - **zsh** + [antigen](https://github.com/zsh-users/antigen)
 - CLI utilities and tools
@@ -41,7 +41,7 @@ Following tools will be installed:
 
 ## Requirements
 
-<img src="https://cdn.svgporn.com/logos/ubuntu.svg" height="12" /> **Ubuntu 20.04**
+<img src="https://cdn.svgporn.com/logos/ubuntu.svg" height="14" /> **Ubuntu 20.04**
 
 **Ubuntu** here means [Ubuntu](https://ubuntu.com/) itself and all its flavors and distributions based on certain Ubuntu version like: Kubuntu, Lubuntu, Xubuntu, Linux Mint, Pop!\_OS, elementary OS, Zorin OS, etc.
 
