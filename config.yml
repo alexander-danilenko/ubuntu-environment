@@ -80,7 +80,7 @@ apps:
     - sublime-text         # Text/code editor
 
     ###> Gnome-based distro packages.
-    #- chrome-gnome-shell
+    #- gnome-tweaks
     #- network-manager-openvpn
     #- network-manager-openvpn-gnome
 
