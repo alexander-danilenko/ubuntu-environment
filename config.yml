@@ -195,7 +195,6 @@ vscode:
     - mariusschulz.yarn-lock-syntax     # yarn.lock syntax highlight
 
     # PHP/Drupal specific extensions
-    - bbeversdorf.drupal-check # Drupal: check for deprecations
     - ikappas.composer         # Composer support
     - ikappas.phpcs            # PHP CodeSniffer
 
