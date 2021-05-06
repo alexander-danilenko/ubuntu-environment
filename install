@@ -2,30 +2,28 @@
 
 set -e
 
-################## Variables ###################################################
+###> Helpers ###################################################################
+green=`tput setaf 2`
+yellow=`tput setaf 3`
+reset=`tput sgr0`
+###< Helpers ###################################################################
 
 # Packages required for script to run.
-MISSING_PREREQUISITES=()
+APT_PREREQUISITES=(
+  git
+  ansible
+  curl
+)
 
-if ! [ -x "$(command -v git)" ]; then
-  MISSING_PREREQUISITES+=("git")
-fi
+for package in ${APT_PREREQUISITES[@]}; do
+  # If command found then remove from array.
+  [ -x "$(command -v $package)" ] && APT_PREREQUISITES=(${APT_PREREQUISITES[@]/$package})
+done
 
-if ! [ -x "$(command -v ansible)" ]; then
-  MISSING_PREREQUISITES+=("ansible")
-fi
-
-if ! [ -x "$(command -v curl)" ]; then
-  MISSING_PREREQUISITES+=("curl")
-fi
-
-# If missing prerequisites is not empty.
-if (( ${#MISSING_PREREQUISITES[@]} )); then
-  green=`tput setaf 2`
-  yellow=`tput setaf 3`
-  reset=`tput sgr0`
-  echo "${green}Installing prerequisite apt packages: ${yellow}${MISSING_PREREQUISITES[*]}${reset}"
-  sudo apt-get install -y -q ${MISSING_PREREQUISITES[*]} >/dev/null
+# If prerequisites array is not empty.
+if (( ${#APT_PREREQUISITES[@]} )); then
+  echo "${green}Installing prerequisite apt packages: ${yellow}${APT_PREREQUISITES[*]}${reset}"
+  sudo apt-get -q install -y ${APT_PREREQUISITES[*]}
 fi
 
 # Download dotfiles as git submodules.
