@@ -182,6 +182,7 @@ vscode:
     - mikestead.dotenv                   # .env support
     - ms-azuretools.vscode-docker        # Docker support
     - ms-python.python                   # Python support
+    - ms-vscode-remote.remote-ssh        # SSH support 
     - pkief.material-icon-theme          # Material Icon Theme
     #- TabNine.tabnine-vscode            # AI-assisted autocomplete
     - tyriar.lorem-ipsum                 # Lorem Ipsum generator
@@ -193,7 +194,6 @@ vscode:
     - christian-kohler.npm-intellisense # NPM better autocomplete
     - dbaeumer.vscode-eslint            # Eslint support
     - mariusschulz.yarn-lock-syntax     # yarn.lock syntax highlight
-
     # PHP/Drupal specific extensions
     - ikappas.composer         # Composer support
     - ikappas.phpcs            # PHP CodeSniffer
