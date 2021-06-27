@@ -16,8 +16,8 @@ apps:
    - https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
    - https://download.xnview.com/XnViewMP-linux-x64.deb
    - https://global.download.synology.com/download/Utility/SynologyDriveClient/2.0.4-11112/Ubuntu/Installer/x86_64/synology-drive-client-11112.x86_64.deb
-   - https://repo.skype.com/latest/skypeforlinux-64.deb
    - https://zoom.us/client/latest/zoom_amd64.deb
+   #- https://repo.skype.com/latest/skypeforlinux-64.deb
 
   # List of apt packages to install.
   apt:
@@ -80,9 +80,9 @@ apps:
     - sublime-text         # Text/code editor
 
     ###> Gnome-based distro packages.
-    #- gnome-tweaks
-    #- network-manager-openvpn
-    #- network-manager-openvpn-gnome
+    # - gnome-tweaks
+    # - network-manager-openvpn
+    # - network-manager-openvpn-gnome
 
     ###> KDE apps
     #- kompare  # File difference viewer
