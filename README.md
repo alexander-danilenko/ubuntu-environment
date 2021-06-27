@@ -1,10 +1,6 @@
-<p align="center">
-  <img src="https://cdn.svgporn.com/logos/ubuntu.svg" width="128" />
-</p>
+<img src="https://cdn.svgporn.com/logos/ubuntu.svg" width="182" align="right" />
 
-<h1 align="center">
-  Ubuntu environment
-</h1>
+# Ubuntu environment
 
 This repo contains [Ansible](https://www.ansible.com/) script for fast and easy DevOps/Web Developer environment setup on [Ubuntu](https://ubuntu.com/) and destributions based on it.
 
