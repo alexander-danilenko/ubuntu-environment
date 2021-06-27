@@ -57,7 +57,7 @@ Following tools will be installed:
 
 ## Contribution
 
-If you experiencing any problems with your distribution, please raise an issue on [GitHub](https://github.com/alexander-danilenko/ubuntu-dotfiles/issues/new).
+If you experiencing any problems with your distribution, please raise an issue on [GitHub](https://github.com/alexander-danilenko/ubuntu-environment/issues/new).
 
 - - -
 
