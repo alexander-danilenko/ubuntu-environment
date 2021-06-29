@@ -71,7 +71,6 @@ apps:
     - ffmpeg               # Universal media transcoder tool
     - flameshot            # Screenshot tool
     - inkscape             # Vector image editor
-    - telegram-desktop     # Best IM
     - transmission         # Torrent client
     - vlc                  # Legend!
 
@@ -96,6 +95,7 @@ apps:
     - com.getpostman.Postman # API debugging tool
     - com.github.johnfactotum.Foliate # eBook reader
     - com.viber.Viber # Viber messanger
+    - org.telegram.desktop # Best IM!
     # - com.discordapp.Discord
     # - com.rafaelmardojai.Blanket # Listen to different sounds
     # - com.spotify.Client
