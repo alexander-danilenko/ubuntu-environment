@@ -13,7 +13,7 @@ apps:
    - https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
    - https://download.xnview.com/XnViewMP-linux-x64.deb
    - https://downloads.1password.com/linux/debian/amd64/stable/1password-latest.deb
-   - https://downloads.slack-edge.com/linux_releases/slack-desktop-4.17.0-amd64.deb
+   - https://downloads.slack-edge.com/releases/linux/4.18.0/prod/x64/slack-desktop-4.18.0-amd64.deb
    - https://global.download.synology.com/download/Utility/SynologyDriveClient/3.0.1-12674/Ubuntu/Installer/x86_64/synology-drive-client-12674.x86_64.deb
    - https://zoom.us/client/latest/zoom_amd64.deb
    #- https://repo.skype.com/latest/skypeforlinux-64.deb
