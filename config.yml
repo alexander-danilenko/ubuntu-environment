@@ -75,7 +75,6 @@ apps:
     - vlc                  # Legend!
 
     ###> Developer tools
-    - slack-desktop        # Slack Chat
     - sublime-merge        # Git GUI
     - sublime-text         # Text/code editor
 
