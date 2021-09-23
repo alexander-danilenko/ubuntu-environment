@@ -225,11 +225,16 @@
       when: php.install|bool
       become: yes
       apt:
+        # @TODO: Move to configurable array.
         name:
           - 'php{{ php.version }}-common'
           - 'php{{ php.version }}-cli'
           - 'php{{ php.version }}-curl'
+          - 'php{{ php.version }}-apcu'
+          - 'php{{ php.version }}-bcmath'
           - 'php{{ php.version }}-gd'
+          - 'php{{ php.version }}-imagick'
+          - 'php{{ php.version }}-intl'
           - 'php{{ php.version }}-json'
           - 'php{{ php.version }}-mbstring'
           - 'php{{ php.version }}-mysql'
