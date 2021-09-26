@@ -151,6 +151,7 @@ node:
       - gulp
       - http-server
       - lsp
+      - snyk
       - typescript
       - vscode-css-languageserver-bin
       - vscode-html-languageserver-bin
