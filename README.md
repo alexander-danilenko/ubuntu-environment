@@ -46,10 +46,10 @@ Following tools will be installed:
 |   | Distro | Version | Tested |
 |:-:|--------|---------|:------:|
 | <img src="https://cdn.svgporn.com/logos/ubuntu.svg" height="24" /> <img src="https://upload.wikimedia.org/wikipedia/commons/1/1f/Kubuntu_logo.svg" height="24" /> | **Ubuntu** | 20.04 | :heavy_check_mark:	|
-| <img src="https://neon.kde.org/content/neon-logo.svg" height="24" /> | **KDE Neon** | ^5.20 | :heavy_check_mark:	 |
-| <img src="https://cdn.svgporn.com/logos/linux-mint.svg" height="24" /> | **Linux Mint** | ^20 | :heavy_check_mark:	 |
-| <img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Pop_OS-Logo-nobg.svg" height="24" /> | **Pop!_OS** | ^20.04 | :heavy_check_mark: |
-| <img src="https://cdn.svgporn.com/logos/elementary.svg" height="24" /> | **Elementary OS** | ^6 | :heavy_check_mark:	|
+| <img src="https://neon.kde.org/content/neon-logo.svg" height="24" /> | **KDE Neon** | 5.20 | :heavy_check_mark:	 |
+| <img src="https://cdn.svgporn.com/logos/linux-mint.svg" height="24" /> | **Linux Mint** | 20.x | :heavy_check_mark:	 |
+| <img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Pop_OS-Logo-nobg.svg" height="24" /> | **Pop!_OS** | 20.04 | :heavy_check_mark: |
+| <img src="https://cdn.svgporn.com/logos/elementary.svg" height="24" /> | **Elementary OS** | 6 | :heavy_check_mark:	|
 
 - - -
 
