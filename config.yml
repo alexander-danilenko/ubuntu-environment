@@ -11,12 +11,7 @@ apps:
   # List of *.deb URLs to install.
   deb:
    - https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
-   - https://download.xnview.com/XnViewMP-linux-x64.deb
    - https://downloads.1password.com/linux/debian/amd64/stable/1password-latest.deb
-   - https://downloads.slack-edge.com/releases/linux/4.18.0/prod/x64/slack-desktop-4.18.0-amd64.deb
-   - https://global.download.synology.com/download/Utility/SynologyDriveClient/3.0.1-12674/Ubuntu/Installer/x86_64/synology-drive-client-12674.x86_64.deb
-   - https://zoom.us/client/latest/zoom_amd64.deb
-   #- https://repo.skype.com/latest/skypeforlinux-64.deb
 
   # List of apt packages to install.
   apt:
@@ -69,7 +64,6 @@ apps:
     - evolution            # Outlook alternative
     - evolution-ews        # Evolution Exchange support
     - ffmpeg               # Universal media transcoder tool
-    - flameshot            # Screenshot tool
     - inkscape             # Vector image editor
     - transmission         # Torrent client
     - vlc                  # Legend!
@@ -93,11 +87,19 @@ apps:
   flatpak:
     - com.getpostman.Postman # API debugging tool
     - com.github.johnfactotum.Foliate # eBook reader
-    - com.viber.Viber # Viber messanger
+    - com.slack.Slack
+    - com.synology.SynologyDrive # Synology Drive Client
+    - com.xnview.XnViewMP
+    - org.flameshot.Flameshot # Screenshot tool
+    - org.remmina.Remmina # Remote desktop client (RDP, VNC)
     - org.telegram.desktop # Best IM!
+    - us.zoom.Zoom # Yeah, I hate it too
     # - com.discordapp.Discord
+    # - com.microsoft.Teams
     # - com.rafaelmardojai.Blanket # Listen to different sounds
+    # - com.skype.Client
     # - com.spotify.Client
+    # - com.viber.Viber # Viber messanger
 
 docker:
   install: yes
@@ -163,11 +165,11 @@ python:
   pip3:
     # List of global packages to install.
     global:
-      - click # Handy-dandy module for writing terminal apps.
-      - feedparser # RSS parser.
+      - click            # Handy-dandy module for writing terminal apps.
+      - feedparser       # RSS parser.
       - ffmpeg-normalize # Normalizes audio using ffmpeg.
-      - ffpb # ffmpeg with progress bar.
-      - yq # Takes YAML input and retrieves data by query.
+      - ffpb             # ffmpeg with progress bar.
+      - yq               # Takes YAML input and retrieves data by query.
 
 vscode:
   install: yes
