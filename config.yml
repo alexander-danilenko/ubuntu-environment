@@ -137,6 +137,7 @@ node:
     # List of global npm packages to install for default node.
     global: 
       - bower
+      - dynamodb-admin # Handy Web-UI for viewing local DynamoDB data
       - eslint
       - eslint-config-airbnb
       - eslint-config-google
