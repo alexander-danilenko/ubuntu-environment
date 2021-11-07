@@ -16,6 +16,7 @@ apps:
   # List of apt packages to install.
   apt:
     ###> System/CLI apps
+    - apache2-utils # Apache utils. Provides 'ab' command.
     - cifs-utils  # Common Internet File System utilities
     - curl        # Command line tool for transferring data with URL syntax
     - default-jdk # Jave development kit
