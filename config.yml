@@ -12,6 +12,7 @@ apps:
   deb:
    - https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
    - https://downloads.1password.com/linux/debian/amd64/stable/1password-latest.deb
+   - https://zoom.us/client/latest/zoom_amd64.deb # Yeah, I hate it too
 
   # List of apt packages to install.
   apt:
@@ -94,7 +95,6 @@ apps:
     - org.flameshot.Flameshot # Screenshot tool
     - org.remmina.Remmina # Remote desktop client (RDP, VNC)
     - org.telegram.desktop # Best IM!
-    - us.zoom.Zoom # Yeah, I hate it too
     # - com.discordapp.Discord
     # - com.microsoft.Teams
     # - com.rafaelmardojai.Blanket # Listen to different sounds
@@ -129,7 +129,7 @@ php:
 node:
   install: yes
   # List of node versions to install.
-  versions: 
+  versions:
     - 14
     - 12
     - 10
