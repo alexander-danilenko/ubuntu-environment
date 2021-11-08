@@ -130,9 +130,9 @@ node:
   install: yes
   # List of node versions to install.
   versions:
-    - 14
-    - 12
-    - 10
+    - 16 # LTS Current
+    - 14 # LTS Previous
+    - 12 # LTS Legacy
   defaultVersion: node # Latest installed node version.
   npm:
     # List of global npm packages to install for default node.
