@@ -8,25 +8,8 @@ yellow=`tput setaf 3`
 reset=`tput sgr0`
 ###< Helpers ###################################################################
 
-# Packages required for script to run.
-APT_PREREQUISITES=(
-  git
-  ansible
-  curl
-)
-
-for package in ${APT_PREREQUISITES[@]}; do
-  # If command found then remove from array.
-  [ -x "$(command -v $package)" ] && APT_PREREQUISITES=(${APT_PREREQUISITES[@]/$package})
-done
-
-# If prerequisites array is not empty.
-if (( ${#APT_PREREQUISITES[@]} )); then
-  echo "${green}Installing prerequisite apt packages: ${yellow}${APT_PREREQUISITES[*]}${reset}"
-  sudo apt-get -q install -y ${APT_PREREQUISITES[*]}
-fi
-
-# Download dotfiles as git submodules.
-git submodule update --init --remote --force ./dotfiles/
+# Download ansible requirements.
+mkdir -p vendor/roles
+ansible-galaxy install -r requirements.yml --roles-path vendor/roles
 
 ansible-playbook playbook.yml --ask-become-pass "$@"
