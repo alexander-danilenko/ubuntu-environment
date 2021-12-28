@@ -1,0 +1,66 @@
+---
+
+- name: 'Install PHP'
+  become: true
+  package:
+    state: present
+    name:
+      - 'php-common'
+      - 'php-apcu'
+      - 'php-bcmath'
+      - 'php-cli'
+      - 'php-curl'
+      - 'php-gd'
+      - 'php-imagick'
+      - 'php-intl'
+      - 'php-json'
+      - 'php-mbstring'
+      - 'php-mysql'
+      - 'php-opcache'
+      - 'php-xml'
+      - 'php-zip'
+
+- name: 'Download composer'
+  get_url:
+    url: 'https://getcomposer.org/composer-stable.phar'
+    dest: '{{ ansible_env.HOME }}/.local/bin/composer'
+    mode: '0755'
+
+- name: 'Create composer directories'
+  file:
+    path: '{{ item }}'
+    state: 'directory'
+  with_items:
+    - '{{ ansible_env.HOME }}/.composer'
+    - '{{ ansible_env.HOME }}/.composer/global'
+
+- name: 'Install "cgr/consolidation" composer global package'
+  shell: |
+    . {{ ansible_env.HOME }}/.profile
+    composer global require consolidation/cgr
+  args:
+    executable: '/bin/bash'
+    creates: '{{ ansible_env.HOME }}/.composer/vendor/bin/cgr'
+
+- name: 'List composer global packages installed'
+  shell: 'tree {{ ansible_env.HOME }}/.composer/global -d -f -L 2'
+  register: php_composer_global_packages_installed
+
+- name: 'Install global packages using "cgr"'
+  when: php_composer_global_packages_installed.stdout.find(item) == -1
+  loop: '{{ php_composer_global_packages }}'
+  shell: |
+    . {{ ansible_env.HOME }}/.profile 
+    cgr {{ item }}
+  args:
+    executable: '/bin/bash'
+
+- name: 'Enable "Drupal" code sniffer standards'
+  when: php_composer_global_packages|length > 0 and 'drupal/coder' in php_composer_global_packages
+  synchronize:
+    src: '{{ item }}'
+    dest: '{{ ansible_env.HOME }}/.composer/global/squizlabs/php_codesniffer/vendor/squizlabs/php_codesniffer/src/Standards'
+    recursive: yes
+  with_items:
+    - '{{ ansible_env.HOME }}/.composer/global/drupal/coder/vendor/drupal/coder/coder_sniffer/Drupal'
+    - '{{ ansible_env.HOME }}/.composer/global/drupal/coder/vendor/drupal/coder/coder_sniffer/DrupalPractice'
