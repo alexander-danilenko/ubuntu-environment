@@ -1,0 +1,45 @@
+---
+# Rely on installed 'docker-ce' package because Docksal uses docker autoinstall
+# script that will override docker repo's file content in linux distros like
+# Linux Mint and Pop!_OS.
+#
+# Note: Docker could be installed using the following ansible role:
+# https://github.com/haxorof/ansible-role-docker-ce
+
+- name: 'Make sure "docker-ce" package is installed'
+  become: true
+  package:
+    name: docker-ce
+    state: present
+
+- name: 'Make sure "docker" service is started'
+  become: yes
+  service:
+    name: docker
+    state: started
+
+- name: 'Download Docksal installer'
+  get_url:
+    url: https://get.docksal.io
+    dest: /tmp/docksal-install
+    mode: 0755
+
+- name: 'Install Docksal'
+  shell: /tmp/docksal-install
+  environment:
+    # Ignore docker install script and rely on docker-ce package instead.
+    DOCKER_VERSION_ALERT_SUPPRESS: 1 
+    # Answer "yes" to all y/n Docksal questions.
+    DOCKSAL_CONFIRM_YES: 1 
+  args:
+    executable: '/bin/bash'
+    creates: /usr/local/bin/fin
+  register: docksal_install_ran
+
+- name: 'Configure Docksal'
+  when: docksal_config is defined
+  loop: '{{ docksal_config | default({}) | dict2items }}'
+  lineinfile:
+    path: '{{ docksal_config_file }}'
+    regexp: '^{{ item.key }}'
+    line: '{{ item.key }}={{ item.value }}'
