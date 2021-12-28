@@ -1,0 +1,60 @@
+---
+
+- name: 'Make sure "nodejs" package is removed'
+  become: yes
+  package:
+    name: nodejs
+    state: absent
+
+- name: 'Download NVM (Node Version Manager)'
+  get_url:
+    url: https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh
+    dest: /tmp/nvm-install.sh
+    mode: 0755
+
+- name: 'Install NVM (Node Version Manager)'
+  shell: /tmp/nvm-install.sh
+  args:
+    executable: '/bin/bash'
+    creates: '{{ nvm_init_script }}'
+
+- name: 'List NVM Node versions installed'
+  shell: |
+    . {{ nvm_init_script }}
+    nvm ls --no-alias --no-colors
+  register: node_versions_installed
+  ignore_errors: yes
+  no_log: True
+
+- name: 'Install Node v{{nvm_node_version}}'
+  shell: |
+    . {{ nvm_init_script }}
+    nvm install {{ nvm_node_version }}
+  args:
+    executable: '/bin/bash'
+
+- name: 'Set default Node version to v{{ nvm_node_version }}'
+  shell: |
+    . {{ nvm_init_script }}
+    nvm alias default {{ nvm_node_version | default("node") }}
+  args:
+    executable: '/bin/bash'
+
+- name: 'List installed global NPM packages'
+  shell: |
+    . {{ nvm_init_script }}
+    npm list --global --depth=0
+  args:
+    executable: '/bin/bash'
+  register: npm_global_packages
+  ignore_errors: yes
+  no_log: True
+
+- name: 'Install global NPM packages'
+  when: npm_global_packages.stdout.find(item) == -1
+  loop: '{{ nvm_npm_global_packages }}'
+  shell: |
+    . {{ nvm_init_script }}
+    npm install --global {{ item }}
+  args:
+    executable: '/bin/bash'
