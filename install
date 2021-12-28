@@ -2,12 +2,6 @@
 
 set -e
 
-###> Helpers ###################################################################
-green=`tput setaf 2`
-yellow=`tput setaf 3`
-reset=`tput sgr0`
-###< Helpers ###################################################################
-
 # Download ansible requirements.
 mkdir -p vendor/roles
 ansible-galaxy install -r requirements.yml --roles-path vendor/roles
