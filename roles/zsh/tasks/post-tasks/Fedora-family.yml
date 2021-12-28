@@ -1,0 +1,7 @@
+---
+# Package brings `chsh` for changing default shell to zsh.
+- name: 'Install "util-linux-user" package'
+  become: true
+  package:
+    name: util-linux-user
+    state: present

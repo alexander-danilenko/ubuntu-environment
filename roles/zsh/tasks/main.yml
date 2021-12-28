@@ -1,0 +1,30 @@
+---
+
+- name: 'Install "zsh" package'
+  become: true
+  package:
+    name: zsh
+    state: present
+
+- name: 'Create "{{ zsh_antigen_directory }}" directory'
+  file:
+    path: '{{ zsh_antigen_directory }}'
+    state: 'directory'
+
+- name: 'Download Antigen'
+  get_url:
+    url: '{{ zsh_antigen_download_url }}'
+    dest: '{{ zsh_antigen_directory }}/antigen.zsh'
+
+- name: '{{ ansible_facts["os_family"] }} family specific tasks'
+  include_tasks: 'post-tasks/{{ ansible_facts["os_family"] }}-family.yml'
+
+- debug:
+    var: zsh_set_as_default_shell
+
+- name: 'Set zsh as a default shell'
+  when: zsh_set_as_default_shell
+  become: true
+  shell: 'chsh -s $(which zsh)'
+  args:
+    executable: '/bin/bash'
