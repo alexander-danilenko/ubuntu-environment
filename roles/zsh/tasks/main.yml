@@ -19,9 +19,6 @@
 - name: '{{ ansible_facts["os_family"] }} family specific tasks'
   include_tasks: 'post-tasks/{{ ansible_facts["os_family"] }}-family.yml'
 
-- debug:
-    var: zsh_set_as_default_shell
-
 - name: 'Set zsh as a default shell'
   when: zsh_set_as_default_shell
   become: true
