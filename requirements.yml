@@ -1,0 +1,17 @@
+---
+
+roles:
+  - name: aws-cli
+    src: deekayen.awscli2
+
+  - name: docker
+    src: https://github.com/haxorof/ansible-role-docker-ce
+
+  - name: google-cloud-sdk
+    src: markosamuli.gcloud
+
+  - name: jetbrains-toolbox
+    src: https://github.com/jaredhocutt/ansible-jetbrains-toolbox
+
+  - name: visual-studio-code
+    src: gantsign.visual-studio-code
