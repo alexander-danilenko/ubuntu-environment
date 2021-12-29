@@ -1,4 +1,6 @@
 - name: 'Install packages for current distro'
+  # @TODO: RedHat derivative distros needs to have its own list of packages.
+  when: ansible_facts["os_family"]  != 'RedHat'
   become: yes
   package:
     name: '{{ apps_packages }}'
