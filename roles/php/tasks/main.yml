@@ -15,7 +15,6 @@
       - 'php-intl'
       - 'php-json'
       - 'php-mbstring'
-      - 'php-mysql'
       - 'php-opcache'
       - 'php-xml'
       - 'php-zip'
