@@ -17,7 +17,6 @@
 - name: 'Install all *.rpm files from {{ apps_rpm_dir }}'
   become: yes
   yum:
-    name: '{{ item }}'
+    name: "{{ lookup('fileglob', '{{ apps_rpm_dir }}/*.rpm') }}"
     state: present
-  with_fileglob:
-    - "{{ apps_rpm_dir }}/*.rpm"
+    disable_gpg_check: true
