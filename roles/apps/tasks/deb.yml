@@ -1,0 +1,23 @@
+---
+
+- name: 'Make sure directory for *.deb files exists'
+  file:
+    path: '{{ apps_deb_dir }}'
+    state: directory
+    mode: '0755'
+
+- name: 'Download *.deb files by URLs'
+  when: 
+  loop: '{{ apps_deb_urls | default({}) | dict2items }}'
+  get_url:
+    url: '{{ item.value }}'
+    dest: '{{ apps_deb_dir }}/{{ item.key }}.deb'
+    mode: '0755'
+
+- name: 'Install all *.deb files from {{ apps_deb_dir }}'
+  become: yes
+  apt:
+    only_upgrade: yes # Only upgrade a package if it's already installed.
+    deb: '{{ item }}'
+  with_fileglob:
+    - "{{ apps_deb_dir }}/*.deb"

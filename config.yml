@@ -77,8 +77,7 @@ docksal:
     DOCKSAL_DNS_DISABLED: 0 # Set 1 for disable docksal DNS container at all.
     DOCKSAL_DNS_UPSTREAM: 1.1.1.1 # Use CloudFlare DNS as its faster than google's DNS.
 
-################################################################################
-
+#### Applications and packages #################################################
 apps:
   jetbrains_toolbox:
     install: yes
@@ -101,7 +100,7 @@ apps:
       - ms-python.python                     # Python support
       - ms-vscode-remote.remote-ssh          # SSH support 
       - redhat.ansible                       # Ansible support
-      - tommasov.hosts                       # Hosts file syntax highlighter.
+      - tommasov.hosts                       # Hosts file syntax highlighter
       - tyriar.lorem-ipsum                   # Lorem Ipsum generator
       - william-voyek.vscode-nginx           # nginx.conf support
       - yzhang.markdown-all-in-one           # Markdown tools
@@ -120,83 +119,97 @@ apps:
       # Themes
       - github.github-vscode-theme    # GitHub color theme
       - pkief.material-icon-theme     # Material Icon Theme
-      - rokoroku.vscode-theme-darcula # JetBrains-like theme.
+      - rokoroku.vscode-theme-darcula # JetBrains-like theme
 
-  # # @TODO: Implement role.
-  # flatpak:
-  #   - com.getpostman.Postman # API debugging tool
-  #   - com.github.johnfactotum.Foliate # eBook reader
-  #   - com.slack.Slack
-  #   - com.synology.SynologyDrive # Synology Drive Client
-  #   - com.xnview.XnViewMP
-  #   - org.flameshot.Flameshot # Screenshot tool
-  #   - org.remmina.Remmina # Remote desktop client (RDP, VNC)
-  #   - org.telegram.desktop # Best IM!
-  #   # - com.discordapp.Discord
-  #   # - com.microsoft.Teams
-  #   # - com.rafaelmardojai.Blanket # Listen to different sounds
-  #   # - com.skype.Client
-  #   # - com.spotify.Client
-  #   # - com.viber.Viber # Viber messanger
+  ### Flatpak's apps (using flathub.org repo)
+  flatpak:
+    - com.getpostman.Postman # API debugging tool
+    - com.github.johnfactotum.Foliate # eBook reader
+    - com.slack.Slack
+    - com.synology.SynologyDrive # Synology Drive Client
+    - com.xnview.XnViewMP
+    - org.flameshot.Flameshot # Screenshot tool
+    - org.remmina.Remmina # Remote desktop client (RDP, VNC)
+    - org.telegram.desktop # Best IM!
+    # - com.discordapp.Discord
+    # - com.microsoft.Teams
+    # - com.rafaelmardojai.Blanket # Listen to different sounds
+    # - com.skype.Client
+    # - com.spotify.Client
+    # - com.viber.Viber # Viber messanger
 
-  # # @TODO: Implement role.
-  # deb:
-  #   1password: https://downloads.1password.com/linux/debian/amd64/stable/1password-latest.deb
-  #   google-chrome: https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-  #   teamviewer: https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
-  #   zoom: https://zoom.us/client/latest/zoom_amd64.deb # Yeah, I hate it too
+  # List of *.deb URLs that needs to be installed.
+  # NOTE: Applicable only to debian based distros.
+  deb_urls:
+    1password: https://downloads.1password.com/linux/debian/amd64/stable/1password-latest.deb
+    google-chrome: https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+    teamviewer: https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
+    zoom: https://zoom.us/client/latest/zoom_amd64.deb
 
-  # # @TODO: Implement role.
-  # packages:
-  #   ### System/CLI apps
-  #   - apache2-utils # Apache utils. Provides 'ab' command.
-  #   - cifs-utils  # Common Internet File System utilities
-  #   - curl        # Command line tool for transferring data with URL syntax
-  #   - default-jdk # Jave development kit
-  #   - default-jre # Java runtime
-  #   - exfat-fuse  # Read and write exFAT driver
-  #   - exfat-utils # Utilities to create, check, label and dump exFAT file system
-  #   - git
-  #   - git-flow
-  #   - grub-customizer  # GUI for GRUB settings management
-  #   - heif-gdk-pixbuf  # Apple HEIF/HEIC decoder support 
-  #   - heif-thumbnailer # Apple HEIF/HEIC thumbnails support 
-  #   - htop        # Terminal system monitor
-  #   - jq          # Takes JSON input and retrieves data by query
-  #   - mc          # Two panel terminal file manager
-  #   - neofetch    # Shows Linux System Information with Distribution Logo
-  #   - net-tools   # Base network tools
-  #   - nfs-common  # Package for work with NFS shares
-  #   - openfortivpn # Corporate VPN open source alternative.
-  #   - stacer      # Cool CleanMyMac alternative
-  #   - traceroute  # Traces the route taken by packets over an IPv4/IPv6 network
-  #   - tree        # Displays an indented directory tree, in color
-  #   ### Archive formats support
-  #   - p7zip-full  # 7z and 7za file archivers with high compression ratio
-  #   - zip         # zip archiver
-  #   ### Office
-  #   - libreoffice
-  #   - libreoffice-base-drivers # Base drivers
-  #   - libreoffice-help-en-us   # Help: English
-  #   - libreoffice-help-ru      # Help: Russian
-  #   - libreoffice-l10n-ru      # Localization: Russian
-  #   - libreoffice-l10n-uk      # Localization: Ukrainian
-  #   ### Media/Internet/Office
-  #   - clementine           # Audio/Radio/Podcasts player
-  #   - dia                  # Diagram editor
-  #   - evolution            # Outlook alternative
-  #   - evolution-ews        # Evolution Exchange support
-  #   - ffmpeg               # Universal media transcoder tool
-  #   - inkscape             # Vector image editor
-  #   - transmission         # Torrent client
-  #   - vlc                  # Legend!
-  #   ### Gnome-based distro packages.
-  #   # - gnome-tweaks
-  #   # - network-manager-openvpn
-  #   # - network-manager-openvpn-gnome
-  #   ### KDE apps
-  #   #- kompare  # File difference viewer
-  #   #- krename  # Batch renamer for KDE
-  #   #- krusader # Two-panel file manager
-  #   #- okular   # Universal document viewer
-  #   #- yakuake  # Quake-style dropdown terminal
+  # List of *.rpm URLs that needs to be installed.
+  # NOTE: Applicable only to debian based distros.
+  rpm_urls:
+    1password: https://downloads.1password.com/linux/rpm/stable/x86_64/1password-latest.rpm
+    google-chrome: https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
+    teamviewer: https://download.teamviewer.com/download/linux/teamviewer.x86_64.rpm
+    zoom: https://zoom.us/client/latest/zoom_x86_64.rpm
+
+  # List of packages that needs to be installed.
+  # NOTE: Distro-specific package manager will be used:
+  # - `apt` for debian based
+  # - `yum` for rpm-distros, etc.
+  # Check all the packages are available in your repos before running playbook.
+  packages:
+    ### System/CLI apps
+    - apache2-utils # Apache utils. Provides 'ab' command.
+    - cifs-utils  # Common Internet File System utilities
+    - curl        # Command line tool for transferring data with URL syntax
+    - default-jdk # Java development kit
+    - default-jre # Java runtime
+    - exfat-fuse  # Read and write exFAT driver
+    - exfat-utils # Utilities to create, check, label and dump exFAT file system
+    - git         # You know what it is.
+    - git-flow    # High-level git repository actions helper.
+    - grub-customizer  # GUI for GRUB settings management
+    - heif-gdk-pixbuf  # Apple HEIF/HEIC decoder support
+    - heif-thumbnailer # Apple HEIF/HEIC thumbnails support
+    - htop        # Terminal system monitor
+    - jq          # Takes JSON input and retrieves data by query
+    - mc          # Two panel terminal file manager
+    - neofetch    # Shows Linux System Information with Distribution Logo
+    - net-tools   # Base network tools
+    - nfs-common  # Package for work with NFS shares
+    - openfortivpn # Corporate VPN open source alternative.
+    - stacer      # Cool CleanMyMac alternative
+    - tldr        # Displays simple help pages for command-line tools.
+    - traceroute  # Traces the route taken by packets over an IPv4/IPv6 network
+    - tree        # Displays an indented directory tree, in color
+    ### Archive formats support
+    - p7zip-full  # 7z and 7za file archivers with high compression ratio
+    - zip         # zip archiver
+    ### Office
+    - libreoffice
+    - libreoffice-base-drivers # Base drivers
+    - libreoffice-help-en-us   # Help: English
+    - libreoffice-help-ru      # Help: Russian
+    - libreoffice-l10n-ru      # Localization: Russian
+    - libreoffice-l10n-uk      # Localization: Ukrainian
+    ### Media/Internet/Office
+    - clementine           # Audio/Radio/Podcasts player
+    - dia                  # Diagram editor
+    - evolution            # Outlook alternative
+    - evolution-ews        # Evolution Exchange support
+    - ffmpeg               # Universal media transcoder tool
+    - inkscape             # Vector image editor
+    - transmission         # Torrent client
+    - vlc                  # Legend!
+    ### Gnome-based distro packages.
+    # - gnome-tweaks
+    # - network-manager-openvpn
+    # - network-manager-openvpn-gnome
+    ### KDE apps
+    #- kompare  # File difference viewer
+    #- krename  # Batch renamer for KDE
+    #- krusader # Two-panel file manager
+    #- okular   # Universal document viewer
+    #- yakuake  # Quake-style dropdown terminal

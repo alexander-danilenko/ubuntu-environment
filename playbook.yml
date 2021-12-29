@@ -69,5 +69,16 @@
     - role: roles/docksal
       when: docker.install|bool and docksal.install|bool
       vars:
-        docksal_global_config: "{{ docksal.config }}"
+        docksal_global_config: '{{ docksal.config }}'
       tags: [docksal]
+
+    #### Apps install. #########################################################
+    # Note: it's the most time-consuming process, so it needs to be happening at
+    # the very end of the playbook to make sure that all the rest is fine.
+    - role: roles/apps
+      vars:
+        apps_packages: '{{ apps.packages }}'
+        apps_flatpak_packages: '{{ apps.flatpak }}'
+        apps_deb_urls: '{{ apps.deb_urls }}'
+        apps_rpm_urls: '{{ apps.rpm_urls }}'
+      tags: [apps, packages, flatpak]

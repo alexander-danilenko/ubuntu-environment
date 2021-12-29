@@ -1,0 +1,18 @@
+- name: 'Install packages for current distro'
+  become: yes
+  package:
+    name: '{{ apps_packages }}'
+    state: 'present'
+    use: 'auto' # Automatically detect current package manager.
+
+- name: '*.deb tasks'
+  when: ansible_facts["os_family"] == 'Debian'
+  include_tasks: 'deb.yml'
+
+- name: '*.rpm tasks'
+  when: "ansible_facts['os_family'] in apps_rpm_distro_families"
+  include_tasks: 'rpm.yml'
+
+- name: 'Flatpak tasks'
+  when: apps_flatpak_packages | length > 0
+  include_tasks: 'flatpak.yml'

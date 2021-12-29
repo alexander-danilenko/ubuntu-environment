@@ -1,0 +1,17 @@
+---
+apps_flatpak_packages: [] # List of flatpak app ids to install.
+apps_packages: [] # List of packages applicable to current system and distro. 
+
+apps_deb_urls: {} # Object in format: {filename_without_extension: url}
+apps_deb_dir: '{{ role_path }}/files/deb'
+
+apps_rpm_urls: {} # Object in format: {filename_without_extension: url}
+apps_rpm_dir: '{{ role_path }}/files/rpm'
+
+# List of rpm-based distro families.
+# @TODO: Extend list and test playbook on that systems.
+apps_rpm_distro_families:
+  - RedHat
+  - CentOS
+  - Fedora
+  - Amazon

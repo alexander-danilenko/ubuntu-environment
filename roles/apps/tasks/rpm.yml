@@ -1,0 +1,23 @@
+---
+
+- name: 'Make sure directory for *.rpm files exists'
+  file:
+    path: '{{ apps_rpm_dir }}'
+    state: directory
+    mode: '0755'
+
+- name: 'Download *.rpm files by URLs'
+  when: 
+  loop: '{{ apps_rpm_urls | default({}) | dict2items }}'
+  get_url:
+    url: '{{ item.value }}'
+    dest: '{{ apps_rpm_dir }}/{{ item.key }}.rpm'
+    mode: '0755'
+
+- name: 'Install all *.rpm files from {{ apps_rpm_dir }}'
+  become: yes
+  yum:
+    name: '{{ item }}'
+    state: present
+  with_fileglob:
+    - "{{ apps_rpm_dir }}/*.rpm"
