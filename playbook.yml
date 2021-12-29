@@ -69,5 +69,5 @@
     - role: roles/docksal
       when: docker.install|bool and docksal.install|bool
       vars:
-        docksal_config: "{{ docksal.config }}"
+        docksal_global_config: "{{ docksal.config }}"
       tags: [docksal]

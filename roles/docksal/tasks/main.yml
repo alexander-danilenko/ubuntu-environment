@@ -37,9 +37,13 @@
   register: docksal_install_ran
 
 - name: 'Configure Docksal'
-  when: docksal_config is defined
-  loop: '{{ docksal_config | default({}) | dict2items }}'
+  loop: '{{ docksal_global_config | default({}) | dict2items }}'
   lineinfile:
     path: '{{ docksal_config_file }}'
     regexp: '^{{ item.key }}'
     line: '{{ item.key }}={{ item.value }}'
+  register: docksal_global_config_set
+
+- name: 'Restart Docksal system services for applying configuration'
+  when: docksal_global_config_set.changed
+  shell: fin system reset
