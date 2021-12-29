@@ -81,10 +81,9 @@ The goal is to support basically any distro, but for now only Debian/Ubuntu base
 
 ## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/alexander-danilenko/ubuntu-environment/issues). 
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/alexander-danilenko/rocket-environment/issues). 
 
-Experiencing any problems with your distribution? [Raise and issue](https://github.com/alexander-danilenko/ubuntu-environment/issues/new)!
-
+Experiencing any problems with your distribution? [Raise and issue](https://github.com/alexander-danilenko/rocket-environment/issues/new)!
 
 ## Show your support
 
