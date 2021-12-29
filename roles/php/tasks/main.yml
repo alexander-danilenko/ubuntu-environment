@@ -34,14 +34,6 @@
     - '{{ ansible_env.HOME }}/.composer'
     - '{{ ansible_env.HOME }}/.composer/global'
 
-- name: 'Install "cgr/consolidation" composer global package'
-  shell: |
-    . {{ ansible_env.HOME }}/.profile
-    composer global require consolidation/cgr
-  args:
-    executable: '/bin/bash'
-    creates: '{{ ansible_env.HOME }}/.composer/vendor/bin/cgr'
-
 - name: 'Make sure `tree` package is installed'
   when: php_composer_global_packages|length > 0
   become: true
@@ -51,15 +43,15 @@
 
 - name: 'List composer global packages installed'
   when: php_composer_global_packages|length > 0
-  shell: 'tree {{ ansible_env.HOME }}/.composer/global -d -f -L 2'
+  shell: 'tree {{ ansible_env.HOME }}/.composer/vendor/ -d -f -L 2'
   register: php_composer_global_packages_installed
 
-- name: 'Install global packages using "cgr"'
-  when: php_composer_global_packages_installed.stdout.find(item) == -1
+- name: 'Install global packages'
   loop: '{{ php_composer_global_packages }}'
+  when: php_composer_global_packages_installed.stdout.find(item) == -1
   shell: |
     . {{ ansible_env.HOME }}/.profile 
-    cgr {{ item }}
+    composer global require {{ item }}
   args:
     executable: '/bin/bash'
 
@@ -67,8 +59,8 @@
   when: php_composer_global_packages|length > 0 and 'drupal/coder' in php_composer_global_packages
   synchronize:
     src: '{{ item }}'
-    dest: '{{ ansible_env.HOME }}/.composer/global/squizlabs/php_codesniffer/vendor/squizlabs/php_codesniffer/src/Standards'
+    dest: '{{ ansible_env.HOME }}/.composer/vendor/squizlabs/php_codesniffer/src/Standards'
     recursive: yes
   with_items:
-    - '{{ ansible_env.HOME }}/.composer/global/drupal/coder/vendor/drupal/coder/coder_sniffer/Drupal'
-    - '{{ ansible_env.HOME }}/.composer/global/drupal/coder/vendor/drupal/coder/coder_sniffer/DrupalPractice'
+    - '{{ ansible_env.HOME }}/.composer/vendor/drupal/coder/coder_sniffer/Drupal'
+    - '{{ ansible_env.HOME }}/.composer/vendor/drupal/coder/coder_sniffer/DrupalPractice'
