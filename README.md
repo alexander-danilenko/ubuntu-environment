@@ -93,4 +93,4 @@ Give a ⭐️ if this project helped you!
 ## 📝 License
 
 Copyright © 2021 [Alexander Danilenko](https://github.com/alexander-danilenko).<br />
-This project is [MIT](https://github.com/alexander-danilenko/ubuntu-environment/blob/ubuntu-20.04/LICENSE) licensed.
+This project is [MIT](./LICENSE) licensed.
