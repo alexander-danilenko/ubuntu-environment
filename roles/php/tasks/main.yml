@@ -42,7 +42,15 @@
     executable: '/bin/bash'
     creates: '{{ ansible_env.HOME }}/.composer/vendor/bin/cgr'
 
+- name: 'Make sure `tree` package is installed'
+  when: php_composer_global_packages|length > 0
+  become: true
+  package:
+    name: 'tree'
+    state: 'present'
+
 - name: 'List composer global packages installed'
+  when: php_composer_global_packages|length > 0
   shell: 'tree {{ ansible_env.HOME }}/.composer/global -d -f -L 2'
   register: php_composer_global_packages_installed
 
