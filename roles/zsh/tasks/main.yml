@@ -16,8 +16,12 @@
     url: '{{ zsh_antigen_download_url }}'
     dest: '{{ zsh_antigen_directory }}/antigen.zsh'
 
-- name: '{{ ansible_facts["os_family"] }} family specific tasks'
-  include_tasks: 'post-tasks/{{ ansible_facts["os_family"] }}-family.yml'
+- name: '(RedHat specific) Install "util-linux-user" package'
+  when: ansible_facts["os_family"]  == 'RedHat'
+  become: true
+  package:
+    name: util-linux-user
+    state: present
 
 - name: 'Set zsh as a default shell'
   when: zsh_set_as_default_shell
