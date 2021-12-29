@@ -12,6 +12,7 @@
     path: '{{ item }}'
 
 - name: 'Make sure rsync is installed'
+  become: yes
   package:
     state: present
     name: 'rsync'
