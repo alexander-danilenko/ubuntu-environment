@@ -52,20 +52,20 @@ sudo apt install git ansible
 ./install
 ```
 
-## Tested on
+## 🐧 Distro compatibility
 
 There are lots of distros based on Debian and Ubuntu, it's impossible to verify them all. But at least the following distros supported and works well: 
 
-|   | Distro | Version | Tested |
-|:-:|--------|---------|:------:|
-| <img src="https://cdn.svgporn.com/logos/debian.svg" height="24" /> | **Debian** | 11 | :heavy_check_mark:	|
-| <img src="https://cdn.svgporn.com/logos/ubuntu.svg" height="24" /> | **Ubuntu** | 20.04 | :heavy_check_mark:	|
-| <img src="https://neon.kde.org/content/neon-logo.svg" height="24" /> | **KDE Neon** | 5.20 | :heavy_check_mark:	 |
-| <img src="https://cdn.svgporn.com/logos/linux-mint.svg" height="24" /> | **Linux Mint** | 20.x | :heavy_check_mark:	 |
-| <img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Pop_OS-Logo-nobg.svg" height="24" /> | **Pop!_OS** | 20.04 | :heavy_check_mark: |
-| <img src="https://cdn.svgporn.com/logos/elementary.svg" height="24" /> | **Elementary OS** | 6 | :heavy_check_mark:	|
+|   | Distro | Version | Tested | Works |
+|:-:|--------|---------|:------:|:-----:|
+| <img src="https://cdn.svgporn.com/logos/debian.svg" height="24" /> | **Debian** | 11 | ✅ | ✅ |
+| <img src="https://cdn.svgporn.com/logos/ubuntu.svg" height="24" /> | **Ubuntu** | 20.04 | ✅ | ✅ |
+| <img src="https://cdn.svgporn.com/logos/linux-mint.svg" height="24" /> | **Linux Mint** | 20 | ✅ | ✅ |
+| <img src="https://neon.kde.org/content/neon-logo.svg" height="24" /> | **KDE Neon** | 5.20 | ❌ | ❔ |
+| <img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Pop_OS-Logo-nobg.svg" height="24" /> | **Pop!_OS** | 20.04 | ❌ | ❔ |
+| <img src="https://cdn.svgporn.com/logos/elementary.svg" height="24" /> | **Elementary OS** | 6 | ❌ | ❔ |
 
-### What about RPM-based distros like Fedora?
+### <img src="https://cdn.svgporn.com/logos/redhat-icon.svg" height="16" /> What about RPM-based distros like <img src="https://cdn.svgporn.com/logos/fedora.svg" height="16" /> Fedora?
 
 The playbook works in Fedora and RHEL, but not all roles works correctly because of major differences between two distro families. Some roles have to be skipped on RPM-based distros for achieving at least playbook to finish.
 
