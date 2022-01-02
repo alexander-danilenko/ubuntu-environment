@@ -29,10 +29,12 @@
 - name: 'Install Docksal'
   shell: /tmp/docksal-install
   environment:
-    # Ignore docker install script and rely on docker-ce package instead.
-    DOCKER_VERSION_ALERT_SUPPRESS: 1 
     # Answer "yes" to all y/n Docksal questions.
-    DOCKSAL_CONFIRM_YES: 1 
+    DOCKSAL_CONFIRM_YES: 1
+    # Docksal install script will trigger docker install script anyway. For 
+    # avoiding system modification set DRY_RUN env variable used by docker 
+    # install script.
+    DRY_RUN: 1
   args:
     executable: '/bin/bash'
     creates: /usr/local/bin/fin
