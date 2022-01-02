@@ -58,9 +58,9 @@ There are lots of distros based on Debian and Ubuntu, it's impossible to verify 
 
 |   | Distro | Version | Tested | Works |
 |:-:|--------|---------|:------:|:-----:|
-| <img src="https://cdn.svgporn.com/logos/debian.svg" height="24" /> | **Debian** | 11 | ✅ | ✅ |
-| <img src="https://cdn.svgporn.com/logos/ubuntu.svg" height="24" /> | **Ubuntu** | 20.04 | ✅ | ✅ |
-| <img src="https://cdn.svgporn.com/logos/linux-mint.svg" height="24" /> | **Linux Mint** | 20 | ✅ | ✅ |
+| <img src="https://cdn.svgporn.com/logos/debian.svg" height="24" /> | **Debian** | 11 | ✔️ | ✔️ |
+| <img src="https://cdn.svgporn.com/logos/ubuntu.svg" height="24" /> | **Ubuntu** | 20.04 | ✔️ | ✔️ |
+| <img src="https://cdn.svgporn.com/logos/linux-mint.svg" height="24" /> | **Linux Mint** | 20 | ✔️ | ✔️ |
 | <img src="https://neon.kde.org/content/neon-logo.svg" height="24" /> | **KDE Neon** | 5.20 | ❌ | ❔ |
 | <img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Pop_OS-Logo-nobg.svg" height="24" /> | **Pop!_OS** | 20.04 | ❌ | ❔ |
 | <img src="https://cdn.svgporn.com/logos/elementary.svg" height="24" /> | **Elementary OS** | 6 | ❌ | ❔ |
