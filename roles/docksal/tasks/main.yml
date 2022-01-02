@@ -6,10 +6,12 @@
 # Note: Docker could be installed using the following ansible role:
 # https://github.com/haxorof/ansible-role-docker-ce
 
-- name: 'Make sure "docker-ce" package is installed'
+- name: 'Make sure prerequisite packages are installed'
   become: true
   package:
-    name: docker-ce
+    name:
+      - curl 
+      - docker-ce
     state: present
 
 - name: 'Make sure "docker" service is started'
