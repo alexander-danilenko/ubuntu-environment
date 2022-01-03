@@ -12,7 +12,7 @@
     - role: vendor/roles/zsh
 
     #### Languages and interpreters. ###########################################
-    - role: roles/node
+    - role: vendor/roles/node
       when: node.install|bool
       vars:
         nvm_node_version: '{{ node.version }}'

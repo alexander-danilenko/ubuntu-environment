@@ -1,4 +1,0 @@
-nvm_dir: '{{ ansible_env.HOME }}/.nvm'
-nvm_init_script: '{{ nvm_dir }}/nvm.sh'
-nvm_node_version: '16'
-nvm_npm_global_packages: []
