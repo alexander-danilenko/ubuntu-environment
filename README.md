@@ -24,7 +24,7 @@
 
 Setting up a new developer's machine can be an ad-hoc, manual, and time-consuming process. The current project aims to simplify the process with an Ansible Playbook to automate the setup of the system for being a rockstar of DevOps and Web Development.
 
-## Rocket environment ingredients 
+## Environment ingredients 
 
 The following will be installed and configured for you:
 
@@ -82,9 +82,9 @@ The goal is to support basically any distro, but for now only Debian/Ubuntu base
 
 ## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/alexander-danilenko/rocket-environment/issues). 
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/alexander-danilenko/ubuntu-environment/issues). 
 
-Experiencing any problems with your distribution? [Raise and issue](https://github.com/alexander-danilenko/rocket-environment/issues/new)!
+Experiencing any problems with your distribution? [Raise and issue](https://github.com/alexander-danilenko/ubuntu-environment/issues/new)!
 
 ## Show your support
 
