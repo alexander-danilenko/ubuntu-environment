@@ -21,10 +21,9 @@
 - name: 'List NVM Node versions installed'
   shell: |
     . {{ nvm_init_script }}
-    nvm ls --no-alias --no-colors
+    nvm ls --no-alias --no-colors || true
   register: node_versions_installed
   ignore_errors: yes
-  no_log: True
 
 - name: 'Install Node v{{nvm_node_version}}'
   shell: |
@@ -43,12 +42,10 @@
 - name: 'List installed global NPM packages'
   shell: |
     . {{ nvm_init_script }}
-    npm list --global --depth=0
+    npm list --global --depth=0 || true
   args:
     executable: '/bin/bash'
   register: npm_global_packages
-  ignore_errors: yes
-  no_log: True
 
 - name: 'Install global NPM packages'
   when: npm_global_packages.stdout.find(item) == -1
