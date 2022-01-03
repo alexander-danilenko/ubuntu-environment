@@ -68,7 +68,7 @@ There are lots of distros based on Debian and Ubuntu, it's impossible to verify 
 
 ### <img src="https://cdn.svgporn.com/logos/redhat-icon.svg" height="16" /> What about RPM-based distros like <img src="https://cdn.svgporn.com/logos/fedora.svg" height="16" /> Fedora?
 
-Check out the [fedora-environment](https://github.com/alexander-danilenko/fedora-environment) project.
+Check out the **[<img src="https://cdn.svgporn.com/logos/fedora.svg" height="12" /> Fedora Environment](https://github.com/alexander-danilenko/fedora-environment)** project.
 
 ## Author
 
