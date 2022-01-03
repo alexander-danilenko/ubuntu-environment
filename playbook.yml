@@ -9,7 +9,7 @@
     #### System and terminal-related changes. ##################################
     - role: roles/sysctl
     - role: roles/dotfiles
-    - role: roles/zsh
+    - role: vendor/roles/zsh
 
     #### Languages and interpreters. ###########################################
     - role: roles/node

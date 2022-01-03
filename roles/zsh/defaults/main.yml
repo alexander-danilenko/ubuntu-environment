@@ -1,3 +1,0 @@
-zsh_set_as_default_shell: true # Set zsh as a default shell.
-zsh_antigen_download_url: https://git.io/antigen
-zsh_antigen_directory: '{{ ansible_env.HOME }}/.antigen'
