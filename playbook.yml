@@ -26,7 +26,7 @@
         python3_pip3_global_packages: '{{ python3.pip3_global_packages }}'
       tags: [python, python3, pip3, pip]
 
-    - role: roles/php
+    - role: vendor/roles/php-composer
       when: php.install|bool
       vars:
         php_composer_global_packages: '{{ php.composer_global_packages }}'

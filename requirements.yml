@@ -19,6 +19,9 @@ roles:
   - name: node
     src: https://github.com/alexander-danilenko/ansible-role-node
 
+  - name: php-composer
+    src: https://github.com/alexander-danilenko/ansible-role-php-composer
+
   - name: visual-studio-code
     src: gantsign.visual-studio-code
 
