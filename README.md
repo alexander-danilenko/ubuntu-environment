@@ -2,7 +2,7 @@
   <img src="./logo.svg" width="33%"/>
 </p>
 
-<h1 align="center">Ubuntu Environment for DevOps/WebDev</h1>
+<h1 align="center"><img src="https://cdn.svgporn.com/logos/ubuntu.svg" height="20" /> Ubuntu Environment for DevOps/WebDev</h1>
 <p>
   <a href="./LICENSE" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge" />
