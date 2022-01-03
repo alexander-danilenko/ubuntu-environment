@@ -1,6 +1,0 @@
----
-docksal_config_file: '{{ ansible_env.HOME }}/.docksal/docksal.env'
-docksal_global_config:
-  DOCKSAL_CONTAINER_HEALTHCHECK_INTERVAL: 10s # Throttle healthchecks for less syslog entries.
-  DOCKSAL_DNS_DISABLED: 0 # Set 1 for disable docksal DNS container at all.
-  DOCKSAL_DNS_UPSTREAM: 1.1.1.1 # Use CloudFlare DNS as its faster than google's DNS.

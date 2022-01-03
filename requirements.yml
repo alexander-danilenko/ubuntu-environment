@@ -7,6 +7,9 @@ roles:
   - name: docker
     src: https://github.com/haxorof/ansible-role-docker-ce
 
+  - name: docksal
+    src: https://github.com/alexander-danilenko/ansible-role-docksal
+
   - name: google-cloud-sdk
     src: markosamuli.gcloud
 
