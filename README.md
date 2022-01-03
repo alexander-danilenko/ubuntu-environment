@@ -68,9 +68,7 @@ There are lots of distros based on Debian and Ubuntu, it's impossible to verify 
 
 ### <img src="https://cdn.svgporn.com/logos/redhat-icon.svg" height="16" /> What about RPM-based distros like <img src="https://cdn.svgporn.com/logos/fedora.svg" height="16" /> Fedora?
 
-The playbook works in Fedora and RHEL, but not all roles works correctly because of major differences between two distro families. Some roles have to be skipped on RPM-based distros for achieving at least playbook to finish.
-
-The goal is to support basically any distro, but for now only Debian/Ubuntu based distros supported.
+Check out the [fedora-environment](https://github.com/alexander-danilenko/fedora-environment) project.
 
 ## Author
 
