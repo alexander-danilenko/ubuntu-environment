@@ -10,6 +10,12 @@
     - role: roles/sysctl
     - role: roles/dotfiles
     - role: vendor/roles/zsh
+    - role: vendor/roles/google-fonts
+      when: google_fonts.install|bool and google_fonts.fonts_list|length > 0
+      vars:
+        google_fonts_install_dir: '{{ google_fonts.fonts_dir }}'
+        google_fonts_list: '{{ google_fonts.fonts_list }}'
+      tags: [fonts]
 
     #### Languages and interpreters. ###########################################
     - role: vendor/roles/node

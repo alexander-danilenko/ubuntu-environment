@@ -213,3 +213,19 @@ apps:
     #- krusader # Two-panel file manager
     #- okular   # Universal document viewer
     #- yakuake  # Quake-style dropdown terminal
+
+#### Google fonts to install ###################################################
+google_fonts:
+  install: yes
+  fonts_dir: '{{ ansible_env.HOME }}/.fonts'
+  fonts_list:
+    - jetbrains-mono
+    - open-sans
+    - open-sans-condensed
+    - roboto
+    - roboto-condensed
+    - roboto-mono
+    - roboto-slab
+    - ubuntu
+    - ubuntu-condensed
+    - ubuntu-mono
