@@ -60,11 +60,11 @@ sudo apt install git ansible
 
 There are lots of distros based on Debian and Ubuntu, it's impossible to verify them all. But at least the following distros supported and works well:
 
-<img alt="Debian 11" src="https://img.shields.io/badge/Debian-11-green.svg?logo=debian&style=for-the-badge" />
-
-<img alt="Ubuntu 20.04" src="https://img.shields.io/badge/Ubuntu-20.04-green.svg?logo=ubuntu&style=for-the-badge" />
-
-<img alt="Linux Mint 20" src="https://img.shields.io/badge/Linux_Mint-20-green.svg?logo=linuxmint&style=for-the-badge" />
+<p>
+<img alt="Debian 11" src="https://img.shields.io/badge/Debian-11-green.svg?logo=debian&style=for-the-badge" /></br>
+<img alt="Ubuntu 20.04" src="https://img.shields.io/badge/Ubuntu-20.04-green.svg?logo=ubuntu&style=for-the-badge" /></br>
+<img alt="Linux Mint 20" src="https://img.shields.io/badge/Linux_Mint-20-green.svg?logo=linuxmint&style=for-the-badge" /></br>
+</p>
 
 ### <img src="https://cdn.svgporn.com/logos/redhat-icon.svg" height="16" /> What about RPM-based distros like <img src="https://cdn.svgporn.com/logos/fedora.svg" height="16" /> Fedora?
 
