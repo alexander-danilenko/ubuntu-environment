@@ -1,9 +1,11 @@
-<img src="https://upload.wikimedia.org/wikipedia/commons/1/18/Creative-Tail-rocket.svg" width="33%" align="right"/>
+<p align="center">
+  <img src="./logo.svg" width="33%"/>
+</p>
 
-<h1>DevOps/WebDev Environment</h1>
+<h1 align="center">Ubuntu Environment for DevOps/WebDev</h1>
 <p>
   <a href="./LICENSE" target="_blank">
-    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge" />
+    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge" />
   </a>
 </p>
 
