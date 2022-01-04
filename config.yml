@@ -157,6 +157,7 @@ apps:
     - cifs-utils  # Common Internet File System utilities
     - curl        # Command line tool for transferring data with URL syntax
     - default-jdk # Java development kit
+    - deja-dup    # System backup tool
     - default-jre # Java runtime
     - exfat-fuse  # Read and write exFAT driver
     - exfat-utils # Utilities to create, check, label and dump exFAT file system
