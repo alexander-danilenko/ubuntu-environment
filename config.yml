@@ -146,14 +146,6 @@ apps:
     teamviewer: https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
     zoom: https://zoom.us/client/latest/zoom_amd64.deb
 
-  # List of *.rpm URLs that needs to be installed.
-  # NOTE: Applicable only to debian based distros.
-  rpm_urls:
-    1password: https://downloads.1password.com/linux/rpm/stable/x86_64/1password-latest.rpm
-    google-chrome: https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
-    teamviewer: https://download.teamviewer.com/download/linux/teamviewer.x86_64.rpm
-    zoom: https://zoom.us/client/latest/zoom_x86_64.rpm
-
   # List of packages that needs to be installed.
   # NOTE: Distro-specific package manager will be used:
   # - `apt` for debian based
