@@ -94,6 +94,7 @@ apps:
       - esbenp.prettier-vscode               # Prettier - Code formatter
       - golang.go                            # Golang support
       - hookyqr.beautify                     # HTML/JSON beautifier
+      - LeetCode.vscode-leetcode             # Leetcode.com plugin
       - mhutchie.git-graph                   # Git graph
       - mikestead.dotenv                     # .env support
       - ms-azuretools.vscode-docker          # Docker support
