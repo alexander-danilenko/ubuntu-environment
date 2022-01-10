@@ -25,6 +25,9 @@ roles:
   - name: php-composer
     src: https://github.com/alexander-danilenko/ansible-role-php-composer
 
+  - name: terraform
+    src: diodonfrost.terraform
+
   - name: visual-studio-code
     src: gantsign.visual-studio-code
 

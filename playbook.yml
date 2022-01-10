@@ -1,7 +1,7 @@
 ---
 - hosts: 127.0.0.1
   connection: local
-  gather_facts: yes # Run gather_facts to define ansible_env.HOME
+  gather_facts: true # Run gather_facts to define ansible_env.HOME
   vars_files:
     - ./config.yml
 
@@ -66,6 +66,11 @@
         gcloud_additional_components: '{{ cloud.gcloud.components }}'
         gcloud_prefer_python3: true
       tags: [cloud, gcloud, google-cloud]
+
+    - role: vendor/roles/terraform
+      become: true
+      when: cloud.terraform.install|bool
+      tags: [cloud, terraform]
 
     #### Docker things. ########################################################
     - role: vendor/roles/docker

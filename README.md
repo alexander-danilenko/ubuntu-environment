@@ -35,6 +35,7 @@ The following will be installed and configured for you:
 - <img src="https://cdn.svgporn.com/logos/jetbrains.svg" height="14"> **JetBrains Toolbox**
 - <img src="https://cdn.svgporn.com/logos/docker-icon.svg" height="14"> **Docker** + <img src="https://d33wubrfki0l68.cloudfront.net/96d4dedb7aa3fbf371d01d3356a97ec463b23e04/ca713/images/docksal-mark-color.svg" height="14"> [**Docksal**](https://docksal.io/)
 - <img src="https://cdn.svgporn.com/logos/aws.svg" height="14"> **AWS CLI**
+- <img src="https://cdn.svgporn.com/logos/terraform-icon.svg" height="14"> **Terraform**
 - <img src="https://cdn.svgporn.com/logos/google-cloud.svg" height="14"> **Google Cloud SDK**
 - <img src="https://cdn.svgporn.com/logos/kubernetes.svg" height="14"> **Kubernetes** + Minikube
 - <img src="https://cdn.svgporn.com/logos/postman.svg" height="14"> **Postman**

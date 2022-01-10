@@ -63,6 +63,10 @@ cloud:
       - kubectl
       - minikube
 
+  # HashiCorp Terraform
+  terraform:
+    install: yes
+
 #### Docker things. ############################################################
 # Docker Community Edition
 docker:
