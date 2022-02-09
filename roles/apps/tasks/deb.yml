@@ -14,9 +14,9 @@
     mode: '0755'
 
 - name: 'Install all *.deb files from {{ apps_deb_dir }}'
-  become: yes
+  become: true
   apt:
-    only_upgrade: yes # Only upgrade a package if it's already installed.
+    only_upgrade: true # Only upgrade a package if it's already installed.
     deb: '{{ item }}'
   with_fileglob:
     - "{{ apps_deb_dir }}/*.deb"
