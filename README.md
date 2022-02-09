@@ -3,12 +3,10 @@
 </p>
 
 <h1 align="center"><img src="https://cdn.svgporn.com/logos/ubuntu.svg" height="22" /> Ubuntu Environment for DevOps/WebDev</h1>
-<p>
-  <a href="./LICENSE" target="_blank">
-    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge" />
+<p align="center">
+  <a href="https://github.com/alexander-danilenko/ubuntu-environment/actions/workflows/20.04.yml">
+    <img alt="Build status badge" src="https://img.shields.io/github/workflow/status/alexander-danilenko/ubuntu-environment/Ubuntu%2020.04/ubuntu-20.04?label=Ubuntu%2020.04&logo=ubuntu&style=for-the-badge" />
   </a>
-
-
 </p>
 
 > This repo contains [Ansible](https://www.ansible.com/) playbook for fast and easy DevOps and Web Developer's Linux environment setup on [Debian](https://debian.org), [Ubuntu](https://ubuntu.com/) and destributions based on them.
@@ -91,5 +89,8 @@ Give a ⭐️ if this project helped you!
 
 ## 📝 License
 
-Copyright © 2021 [Alexander Danilenko](https://github.com/alexander-danilenko).<br />
-This project is [MIT](./LICENSE) licensed.
+<a href="./LICENSE" target="_blank">
+  <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge" />
+</a>
+
+Copyright © 2021 [Alexander Danilenko](https://github.com/alexander-danilenko).
