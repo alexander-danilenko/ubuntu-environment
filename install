@@ -2,6 +2,9 @@
 
 set -e
 
+# Download or update git submodules. 
+git submodule update --init --recursive
+
 # Download ansible requirements.
 mkdir -p vendor/roles
 ansible-galaxy install -r requirements.yml --roles-path vendor/roles

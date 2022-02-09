@@ -47,7 +47,7 @@
       when: apps.visual_studio_code.install|bool
       vars:
         users:
-          - username: '{{ ansible_env.USER }}'
+          - username: '{{ ansible_user }}'
             visual_studio_code_extensions: '{{ apps.visual_studio_code.extensions }}'
       tags: [editor, microsoft, code, vscode, visual-studio-code]
 

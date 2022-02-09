@@ -1,0 +1,49 @@
+name: Ubuntu 20.04
+
+on:
+  push:
+    branches:
+      - main
+      - ubuntu-20.04
+
+concurrency: 
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-20.04
+    container: 
+      image: ubuntu:20.04
+      options: --privileged
+    steps:
+      - name: Prerequisites - apt
+        env:
+          DEBIAN_FRONTEND: noninteractive
+          DEBIAN_PRIORITY: critical
+        run: |
+          apt-get update -q
+          apt-get install -q -y git ansible curl flatpak unzip sudo python3-apt
+
+      # Flatpak packages needs to be checked for existence.
+      - name: Prerequisites - flathub
+        run: flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          submodules: recursive
+
+      # Download all vendor roles from ansible galaxy.
+      - name: Dependencies - ansible-galaxy
+        run: |
+          mkdir -p vendor/roles
+          ansible-galaxy install -r requirements.yml --roles-path vendor/roles
+
+        # Run only certain tags for checking if all packages are available.
+      - name: Run check
+        env:
+          ANSIBLE_FORCE_COLOR: '1'
+        # TODO: Run whole playbook in a workflow.
+        run: ansible-playbook playbook.yml --check --diff --tags=apps,php,python,node

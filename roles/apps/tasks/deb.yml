@@ -7,7 +7,6 @@
     mode: '0755'
 
 - name: 'Download *.deb files by URLs'
-  when: 
   loop: '{{ apps_deb_urls | default({}) | dict2items }}'
   get_url:
     url: '{{ item.value }}'

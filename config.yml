@@ -15,7 +15,6 @@ php:
     - squizlabs/php_codesniffer
     - drupal/coder              # PHPCS Drupal standards
     - friendsofphp/php-cs-fixer # PHPCS standard fixer
-    - mglaman/drupal-check      # Drupal static code analysis tool
 
 node:
   install: yes
