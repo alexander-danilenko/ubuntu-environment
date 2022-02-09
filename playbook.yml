@@ -8,8 +8,14 @@
   roles:
     #### System and terminal-related changes. ##################################
     - role: roles/sysctl
+      tags: [sysctl]
+
     - role: roles/dotfiles
+      tags: [dotfiles]
+
     - role: vendor/roles/zsh
+      tags: [zsh]
+
     - role: vendor/roles/google-fonts
       when: google_fonts.install|bool and google_fonts.fonts_list|length > 0
       vars:
