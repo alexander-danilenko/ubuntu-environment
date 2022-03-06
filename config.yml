@@ -218,11 +218,8 @@ google_fonts:
   fonts_list:
     - jetbrains-mono
     - open-sans
-    - open-sans-condensed
     - roboto
-    - roboto-condensed
     - roboto-mono
     - roboto-slab
     - ubuntu
-    - ubuntu-condensed
     - ubuntu-mono
