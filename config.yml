@@ -20,7 +20,8 @@ node:
   install: yes
   version: 16 # LTS
   npm_global_packages: 
-    - bower
+    - '@nestjs/cli' # Nest.JS CLI
+    - contentful-cli # Contentful.com CLI
     - dynamodb-admin # Handy Web-UI for viewing local DynamoDB data
     - eslint
     - eslint-config-airbnb
@@ -36,14 +37,12 @@ node:
     - flow
     - flow-bin
     - gulp
-    - http-server
+    - http-server # Simple HTTP server for static files in directory
     - lsp
-    - snyk
+    - snyk # snyk.com CLI
     - typescript
     - vscode-css-languageserver-bin
     - vscode-html-languageserver-bin
-    - yarn
-    - '@nestjs/cli'
 
 #### Cloud tools and utils. ####################################################
 cloud:
