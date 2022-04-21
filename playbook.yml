@@ -51,6 +51,7 @@
 
     - role: vendor/roles/visual-studio-code
       when: apps.visual_studio_code.install|bool
+      ignore_errors: yes # Ignore errors caused by missing or removed extensions.
       vars:
         users:
           - username: '{{ lookup("env", "USER") }}'
