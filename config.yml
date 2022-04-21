@@ -91,7 +91,6 @@ apps:
       - acarreiro.calculate                  # Calculates inline math expr
       - amazonwebservices.aws-toolkit-vscode # AWS toolkit
       - christian-kohler.path-intellisense   # File path autocomplete
-      - coenraads.bracket-pair-colorizer     # Bracket Pair Colorizer
       - dakara.transformer                   # Filter, Sort, Unique, Reverse, Align, CSV, Line Selection, Text Transformations and Macros
       - editorconfig.editorconfig            # EditorConfig support
       - esbenp.prettier-vscode               # Prettier - Code formatter
