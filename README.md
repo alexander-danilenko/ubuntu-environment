@@ -4,8 +4,8 @@
 
 <h1 align="center"><img src="https://cdn.svgporn.com/logos/ubuntu.svg" height="22" /> Ubuntu Environment for DevOps/WebDev</h1>
 <p align="center">
-  <a href="https://github.com/alexander-danilenko/ubuntu-environment/actions/workflows/20.04.yml">
-    <img alt="Build status badge" src="https://img.shields.io/github/workflow/status/alexander-danilenko/ubuntu-environment/Ubuntu%2020.04/ubuntu-20.04?label=Ubuntu%2020.04&logo=ubuntu&style=for-the-badge" />
+  <a href="https://github.com/alexander-danilenko/ubuntu-environment/actions/workflows/22.04.yml">
+    <img alt="Build status badge" src="https://img.shields.io/github/workflow/status/alexander-danilenko/ubuntu-environment/Ubuntu%2022.04/ubuntu-22.04?label=Ubuntu%2022.04&logo=ubuntu&style=for-the-badge" />
   </a>
 </p>
 
@@ -61,7 +61,7 @@ There are lots of distros based on Debian and Ubuntu, it's impossible to verify 
 
 <p>
 <img alt="Debian 11" src="https://img.shields.io/badge/Debian-11-green.svg?logo=debian&style=for-the-badge" /></br>
-<img alt="Ubuntu 20.04" src="https://img.shields.io/badge/Ubuntu-20.04-green.svg?logo=ubuntu&style=for-the-badge" /></br>
+<img alt="Ubuntu 22.04" src="https://img.shields.io/badge/Ubuntu-22.04-green.svg?logo=ubuntu&style=for-the-badge" /></br>
 <img alt="Linux Mint 20" src="https://img.shields.io/badge/Linux_Mint-20-green.svg?logo=linuxmint&style=for-the-badge" /></br>
 </p>
 
