@@ -133,7 +133,7 @@ apps:
     - com.slack.Slack
     - com.synology.SynologyDrive # Synology Drive Client
     - com.xnview.XnViewMP
-    - org.flameshot.Flameshot # Screenshot tool
+    - org.flameshot.Flameshot # Screenshot tool. @TODO: Replace with Deepin Screenshot.
     - org.remmina.Remmina # Remote desktop client (RDP, VNC)
     - org.telegram.desktop # Best IM!
     # - com.discordapp.Discord
@@ -190,14 +190,16 @@ apps:
     - libreoffice-l10n-ru      # Localization: Russian
     - libreoffice-l10n-uk      # Localization: Ukrainian
     ### Media/Internet/Office
-    - clementine           # Audio/Radio/Podcasts player
-    - dia                  # Diagram editor
-    - evolution            # Outlook alternative
-    - evolution-ews        # Evolution Exchange support
-    - ffmpeg               # Universal media transcoder tool
-    - inkscape             # Vector image editor
-    - transmission         # Torrent client
-    - vlc                  # Legend!
+    - clementine             # Audio/Radio/Podcasts player
+    - dia                    # Diagram editor
+    - evolution              # Outlook alternative
+    - evolution-ews          # Evolution Exchange support
+    - ffmpeg                 # Universal media transcoder tool
+    - inkscape               # Vector image editor
+    - transmission           # Torrent client
+    - vlc                    # Legend!
+    #- deepin-screen-recorder # Record desktop video.
+    #- deepin-screenshot      # Screenshot tool.
     ### Gnome-based distro packages.
     # - gnome-tweaks
     # - network-manager-openvpn
