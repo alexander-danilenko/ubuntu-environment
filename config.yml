@@ -219,8 +219,5 @@ google_fonts:
   fonts_list:
     - jetbrains-mono
     - open-sans
-    - roboto
-    - roboto-mono
-    - roboto-slab
     - ubuntu
     - ubuntu-mono
