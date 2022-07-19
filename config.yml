@@ -1,6 +1,6 @@
 #### Languages and interpreters. ###############################################
 python3:
-  install: yes
+  install: true
   pip3_global_packages:
     - awsebcli         # AWS Elastic Beanstalk CLI. 
     - click            # Handy-dandy module for writing terminal apps.
@@ -11,15 +11,15 @@ python3:
     - yt-dlp           # Advanced fork of youtube-dl.
 
 php:
-  install: yes
-  composer_global_packages: # NOTE: Packages will be installed using `consolidation/cgr`.
+  install: true
+  composer_global_packages:
     - drush/drush
     - squizlabs/php_codesniffer
-    - drupal/coder              # PHPCS Drupal standards
-    - friendsofphp/php-cs-fixer # PHPCS standard fixer
+    #- drupal/coder              # PHPCS Drupal standards
+    #- friendsofphp/php-cs-fixer # PHPCS standard fixer
 
 node:
-  install: yes
+  install: true
   version: 16 # LTS
   npm_global_packages: 
     - '@nestjs/cli' # Nest.JS CLI
@@ -50,11 +50,11 @@ node:
 cloud:
   # AWS CLI v2
   aws_cli:
-    install: yes
+    install: true
 
   # Google Cloud SDK
   gcloud: 
-    install: yes
+    install: true
     version: '367.0.0'
     components:
       - cloud-datastore-emulator
@@ -66,17 +66,17 @@ cloud:
 
   # HashiCorp Terraform
   terraform:
-    install: yes
+    install: true
 
 #### Docker things. ############################################################
 # Docker Community Edition
 docker:
-  install: yes
+  install: true
 
 # Docker Compose-based all-purpose web-development environment.
 # @see https://docksal.io/
 docksal:
-  install: yes
+  install: true
   config:
     DOCKSAL_CONTAINER_HEALTHCHECK_INTERVAL: 10s # Throttle healthchecks for less syslog entries.
     DOCKSAL_DNS_DISABLED: 0 # Set 1 for disable docksal DNS container at all.
@@ -85,10 +85,10 @@ docksal:
 #### Applications and packages #################################################
 apps:
   jetbrains_toolbox:
-    install: yes
+    install: true
 
   visual_studio_code:
-    install: yes
+    install: true
     extensions:
       - acarreiro.calculate                  # Calculates inline math expr
       - amazonwebservices.aws-toolkit-vscode # AWS toolkit
@@ -137,6 +137,7 @@ apps:
     - org.flameshot.Flameshot # Screenshot tool. @TODO: Replace with Deepin Screenshot.
     - org.remmina.Remmina # Remote desktop client (RDP, VNC)
     - org.telegram.desktop # Best IM!
+    - us.zoom.Zoom
     # - com.discordapp.Discord
     # - com.microsoft.Teams
     # - com.rafaelmardojai.Blanket # Listen to different sounds
@@ -145,17 +146,13 @@ apps:
     # - com.viber.Viber # Viber messanger
 
   # List of *.deb URLs that needs to be installed.
-  # NOTE: Applicable only to debian based distros.
   deb_urls:
     1password: https://downloads.1password.com/linux/debian/amd64/stable/1password-latest.deb
     google-chrome: https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
     teamviewer: https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
-    zoom: https://zoom.us/client/latest/zoom_amd64.deb
+    # zoom: https://zoom.us/client/latest/zoom_amd64.deb # Use Flatpak version instead for better stability.
 
   # List of packages that needs to be installed.
-  # NOTE: Distro-specific package manager will be used:
-  # - `apt` for debian based
-  # - `yum` for rpm-distros, etc.
   # Check all the packages are available in your repos before running playbook.
   packages:
     ### System/CLI apps
@@ -214,10 +211,10 @@ apps:
 
 #### Google fonts to install ###################################################
 google_fonts:
-  install: yes
+  install: true
   fonts_dir: '{{ ansible_env.HOME }}/.fonts'
   fonts_list:
-    - jetbrains-mono
+    #- jetbrains-mono
     - open-sans
     - ubuntu
     - ubuntu-mono

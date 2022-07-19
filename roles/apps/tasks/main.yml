@@ -1,19 +1,12 @@
+- name: '*.deb tasks'
+  include_tasks: 'deb.yml'
+
 - name: 'Install packages for current distro'
-  # @TODO: RedHat derivative distros needs to have its own list of packages.
-  when: ansible_facts["os_family"]  != 'RedHat'
   become: yes
   package:
     name: '{{ apps_packages }}'
     state: 'present'
     use: 'auto' # Automatically detect current package manager.
-
-- name: '*.deb tasks'
-  when: ansible_facts["os_family"] == 'Debian'
-  include_tasks: 'deb.yml'
-
-- name: '*.rpm tasks'
-  when: "ansible_facts['os_family'] in apps_rpm_distro_families"
-  include_tasks: 'rpm.yml'
 
 - name: 'Flatpak tasks'
   when: apps_flatpak_packages | length > 0

@@ -99,5 +99,4 @@
         apps_packages: '{{ apps.packages }}'
         apps_flatpak_packages: '{{ apps.flatpak }}'
         apps_deb_urls: '{{ apps.deb_urls }}'
-        apps_rpm_urls: '{{ apps.rpm_urls }}'
       tags: [apps, packages, flatpak]
