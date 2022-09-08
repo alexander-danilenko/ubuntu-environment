@@ -19,6 +19,9 @@ roles:
   - name: jetbrains-toolbox
     src: https://github.com/jaredhocutt/ansible-jetbrains-toolbox
 
+  - name: miniconda
+    src: andrewrothstein.miniconda
+
   - name: node
     src: https://github.com/alexander-danilenko/ansible-role-node
 
