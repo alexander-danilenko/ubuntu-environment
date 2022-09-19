@@ -130,6 +130,7 @@ apps:
 
   ### Flatpak's apps (using flathub.org repo)
   flatpak:
+    - app.resp.RESP # Redis GUI client
     - com.getpostman.Postman # API debugging tool
     - com.github.johnfactotum.Foliate # eBook reader
     - com.slack.Slack
