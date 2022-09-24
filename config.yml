@@ -131,6 +131,7 @@ apps:
   ### Flatpak's apps (using flathub.org repo)
   flatpak:
     - app.resp.RESP # Redis GUI client
+    - com.discordapp.Discord
     - com.getpostman.Postman # API debugging tool
     - com.github.johnfactotum.Foliate # eBook reader
     - com.slack.Slack
@@ -140,7 +141,6 @@ apps:
     - org.remmina.Remmina # Remote desktop client (RDP, VNC)
     - org.telegram.desktop # Best IM!
     - us.zoom.Zoom
-    # - com.discordapp.Discord
     # - com.microsoft.Teams
     # - com.rafaelmardojai.Blanket # Listen to different sounds
     # - com.skype.Client
