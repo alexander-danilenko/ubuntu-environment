@@ -38,10 +38,6 @@
         python3_pip3_global_packages: '{{ python3.pip3_global_packages }}'
       tags: [python, python3, pip3, pip]
 
-    - role: vendor/roles/miniconda
-      when: python3.install|bool and python3.install_miniconda|bool
-      tags: [python, python3, conda, miniconda, anaconda]
-
     - role: vendor/roles/php-composer
       when: php.install|bool
       vars:

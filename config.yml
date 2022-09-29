@@ -1,7 +1,6 @@
 #### Languages and interpreters. ###############################################
 python3:
   install: true
-  install_miniconda: true
   pip3_global_packages:
     - awsebcli         # AWS Elastic Beanstalk CLI. 
     - click            # Handy-dandy module for writing terminal apps.
