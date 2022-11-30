@@ -45,4 +45,4 @@ jobs:
         env:
           ANSIBLE_FORCE_COLOR: '1'
         # TODO: Run whole playbook in a workflow.
-        run: ansible-playbook playbook.yml --check --diff --tags=apps,php,python,node
+        run: ansible-playbook playbook.yml --check --diff --tags=apps,php,python,node,fish

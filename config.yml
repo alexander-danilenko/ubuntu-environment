@@ -1,3 +1,14 @@
+# Fish shell.
+fish:
+  install: true
+  set_default: true
+  theme: lambda
+  packages:
+    - https://github.com/edc/bass
+    - https://github.com/derekstavis/plugin-nvm
+    - https://github.com/oh-my-fish/plugin-aws
+    - https://github.com/evanlucas/fish-kubectl-completions
+
 #### Languages and interpreters. ###############################################
 python3:
   install: true
@@ -138,7 +149,7 @@ apps:
     - com.xnview.XnViewMP
     - org.flameshot.Flameshot # Screenshot tool. @TODO: Replace with Deepin Screenshot.
     - org.remmina.Remmina # Remote desktop client (RDP, VNC)
-    - org.telegram.desktop # Best IM!
+    #- org.telegram.desktop # Best IM!
     - us.zoom.Zoom
     # - com.microsoft.Teams
     # - com.rafaelmardojai.Blanket # Listen to different sounds
@@ -150,7 +161,7 @@ apps:
   deb_urls:
     1password: https://downloads.1password.com/linux/debian/amd64/stable/1password-latest.deb
     google-chrome: https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-    teamviewer: https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
+    #teamviewer: https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
     # zoom: https://zoom.us/client/latest/zoom_amd64.deb # Use Flatpak version instead for better stability.
 
   # List of packages that needs to be installed.
