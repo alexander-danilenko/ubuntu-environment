@@ -38,7 +38,7 @@ The following will be installed and configured for you:
 - <img src="https://cdn.svgporn.com/logos/kubernetes.svg" height="14"> **Kubernetes** + Minikube
 - <img src="https://cdn.svgporn.com/logos/postman.svg" height="14"> **Postman**
 
-- <img src="https://cdn.svgporn.com/logos/bash-icon.svg" height="14" /> **zsh** + [antigen](https://github.com/zsh-users/antigen)
+- **Fish Shell** + [Oh My Fish](https://github.com/oh-my-fish/oh-my-fish)
 - And so much more (see [`config.yml`](config.yml))...
 
 ## Prerequisites
