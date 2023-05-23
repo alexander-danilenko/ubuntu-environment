@@ -31,7 +31,7 @@ php:
 
 node:
   install: true
-  version: 16 # LTS
+  version: 18 # LTS
   npm_global_packages: 
     - '@nestjs/cli' # Nest.JS CLI
     - contentful-cli # Contentful.com CLI
