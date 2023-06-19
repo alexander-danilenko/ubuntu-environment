@@ -223,7 +223,7 @@ apps:
 
 #### Google fonts to install ###################################################
 google_fonts:
-  install: true
+  install: false
   fonts_dir: '{{ ansible_env.HOME }}/.fonts'
   fonts_list:
     #- jetbrains-mono
