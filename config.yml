@@ -140,22 +140,20 @@ apps:
 
   ### Flatpak's apps (using flathub.org repo)
   flatpak:
-    - app.resp.RESP # Redis GUI client
-    - com.discordapp.Discord
-    - com.getpostman.Postman # API debugging tool
     - com.github.johnfactotum.Foliate # eBook reader
+    - com.rafaelmardojai.Blanket # Listen to different sounds
     - com.slack.Slack
     - com.synology.SynologyDrive # Synology Drive Client
-    - com.xnview.XnViewMP
-    - org.flameshot.Flameshot # Screenshot tool. @TODO: Replace with Deepin Screenshot.
     - org.remmina.Remmina # Remote desktop client (RDP, VNC)
-    #- org.telegram.desktop # Best IM!
+    - org.telegram.desktop # Best IM!
     - us.zoom.Zoom
+    # - com.discordapp.Discord
+    # - com.getpostman.Postman # API debugging tool
     # - com.microsoft.Teams
-    # - com.rafaelmardojai.Blanket # Listen to different sounds
     # - com.skype.Client
     # - com.spotify.Client
-    # - com.viber.Viber # Viber messanger
+    # - com.viber.Viber # IM to talk with your grandma <3
+    # - com.xnview.XnViewMP
 
   # List of *.deb URLs that needs to be installed.
   deb_urls:
