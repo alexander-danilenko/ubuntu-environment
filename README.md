@@ -5,7 +5,7 @@
 <h1 align="center"><img src="https://cdn.svgporn.com/logos/ubuntu.svg" height="22" /> Ubuntu Environment for DevOps/WebDev</h1>
 <p align="center">
   <a href="https://github.com/alexander-danilenko/ubuntu-environment/actions/workflows/22.04.yml">
-    <img alt="Build status badge" src="https://img.shields.io/github/workflow/status/alexander-danilenko/ubuntu-environment/Ubuntu%2022.04/ubuntu-22.04?label=Ubuntu%2022.04&logo=ubuntu&style=for-the-badge" />
+    <img alt="Build status badge" src="https://img.shields.io/github/actions/workflow/status/alexander-danilenko/ubuntu-environment/22.04.yml?branch=ubuntu-22.04&label=Ubuntu%2022.04&logo=ubuntu&style=for-the-badge" />
   </a>
 </p>
 
