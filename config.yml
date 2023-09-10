@@ -12,14 +12,6 @@ fish:
 #### Languages and interpreters. ###############################################
 python3:
   install: true
-  pip3_global_packages:
-    - awsebcli         # AWS Elastic Beanstalk CLI. 
-    - click            # Handy-dandy module for writing terminal apps.
-    - feedparser       # RSS parser.
-    - ffmpeg-normalize # Normalizes audio using ffmpeg.
-    - ffpb             # ffmpeg with progress bar.
-    - yq               # Takes YAML input and retrieves data by query.
-    - yt-dlp           # Advanced fork of youtube-dl.
 
 php:
   install: true
@@ -31,31 +23,11 @@ php:
 
 node:
   install: true
-  version: 18 # LTS
-  npm_global_packages: 
+  version: 20
+  npm_global_packages:
     - '@nestjs/cli' # Nest.JS CLI
-    - contentful-cli # Contentful.com CLI
-    - dynamodb-admin # Handy Web-UI for viewing local DynamoDB data
-    - eslint
-    - eslint-config-airbnb
-    - eslint-config-google
-    - eslint-config-standard
-    - eslint-plugin-import
-    - eslint-plugin-jsx-a11y
-    - eslint-plugin-node
-    - eslint-plugin-promise
-    - eslint-plugin-react
-    - eslint-plugin-react-hooks
-    - firebase-tools
-    - flow
-    - flow-bin
-    - gulp
     - http-server # Simple HTTP server for static files in directory
-    - lsp
     - snyk # snyk.com CLI
-    - typescript
-    - vscode-css-languageserver-bin
-    - vscode-html-languageserver-bin
 
 #### Cloud tools and utils. ####################################################
 cloud:
@@ -64,9 +36,9 @@ cloud:
     install: true
 
   # Google Cloud SDK
-  gcloud: 
+  gcloud:
     install: true
-    version: '367.0.0'
+    version: '445.0.0'
     components:
       - cloud-datastore-emulator
       - cloud-firestore-emulator
@@ -97,12 +69,12 @@ docksal:
 apps:
   jetbrains_toolbox:
     install: true
+    version: '2.0.3'
 
   visual_studio_code:
     install: true
     extensions:
       - acarreiro.calculate                  # Calculates inline math expr
-      - amazonwebservices.aws-toolkit-vscode # AWS toolkit
       - christian-kohler.path-intellisense   # File path autocomplete
       - dakara.transformer                   # Filter, Sort, Unique, Reverse, Align, CSV, Line Selection, Text Transformations and Macros
       - editorconfig.editorconfig            # EditorConfig support
@@ -110,28 +82,14 @@ apps:
       - GitHub.copilot                       # GitHub Copilot!
       - golang.go                            # Golang support
       - hookyqr.beautify                     # HTML/JSON beautifier
-      - LeetCode.vscode-leetcode             # Leetcode.com plugin
       - mhutchie.git-graph                   # Git graph
       - mikestead.dotenv                     # .env support
       - ms-azuretools.vscode-docker          # Docker support
       - ms-python.python                     # Python support
-      - ms-vscode-remote.remote-ssh          # SSH support 
-      - redhat.ansible                       # Ansible support
       - tommasov.hosts                       # Hosts file syntax highlighter
       - tyriar.lorem-ipsum                   # Lorem Ipsum generator
       - william-voyek.vscode-nginx           # nginx.conf support
       - yzhang.markdown-all-in-one           # Markdown tools
-      #- alefragnani.Bookmarks               # Bookmarks
-      #- TabNine.tabnine-vscode              # AI-assisted autocomplete
-    
-      # Node/NPM/Yarn specific extensions
-      - christian-kohler.npm-intellisense # NPM better autocomplete
-      - dbaeumer.vscode-eslint            # Eslint support
-      - mariusschulz.yarn-lock-syntax     # yarn.lock syntax highlight
-
-      # PHP/Drupal specific extensions
-      - ikappas.composer # Composer support
-      - ikappas.phpcs    # PHP CodeSniffer
 
       # Themes
       - github.github-vscode-theme    # GitHub color theme
@@ -140,11 +98,11 @@ apps:
 
   ### Flatpak's apps (using flathub.org repo)
   flatpak:
-    - com.github.johnfactotum.Foliate # eBook reader
+    #- com.github.johnfactotum.Foliate # eBook reader
+    #- org.remmina.Remmina # Remote desktop client (RDP, VNC)
     - com.rafaelmardojai.Blanket # Listen to different sounds
     - com.slack.Slack
     - com.synology.SynologyDrive # Synology Drive Client
-    - org.remmina.Remmina # Remote desktop client (RDP, VNC)
     - org.telegram.desktop # Best IM!
     - us.zoom.Zoom
     # - com.discordapp.Discord
@@ -159,8 +117,9 @@ apps:
   deb_urls:
     1password: https://downloads.1password.com/linux/debian/amd64/stable/1password-latest.deb
     google-chrome: https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+    slack: https://downloads.slack-edge.com/releases/linux/4.33.90/prod/x64/slack-desktop-4.33.90-amd64.deb
+    zoom: https://zoom.us/client/latest/zoom_amd64.deb
     #teamviewer: https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
-    # zoom: https://zoom.us/client/latest/zoom_amd64.deb # Use Flatpak version instead for better stability.
 
   # List of packages that needs to be installed.
   # Check all the packages are available in your repos before running playbook.
@@ -187,10 +146,12 @@ apps:
     - tldr        # Displays simple help pages for command-line tools.
     - traceroute  # Traces the route taken by packets over an IPv4/IPv6 network
     - tree        # Displays an indented directory tree, in color
+    - remmina     # Remote Desktop Client
     ### Archive formats support
     - p7zip-full  # 7z and 7za file archivers with high compression ratio
     - zip         # zip archiver
     ### Office
+    #- foliate                  # Simple and modern ebook viewer
     - libreoffice
     - libreoffice-base-drivers # Base drivers
     - libreoffice-help-en-us   # Help: English

@@ -31,9 +31,6 @@
 
     - role: roles/python3
       when: python3.install|bool
-      vars:
-        python3_version: '{{ python3.version }}'
-        python3_pip3_global_packages: '{{ python3.pip3_global_packages }}'
       tags: [python, python3, pip3, pip]
 
     - role: vendor/roles/php-composer
@@ -45,6 +42,8 @@
     #### Code Editors and IDEs. ################################################
     - role: vendor/roles/jetbrains-toolbox
       when: apps.jetbrains_toolbox.install|bool
+      vars:
+        jetbrains_toolbox_version: "{{ apps.jetbrains_toolbox.version | default('2.0.0') }}"
       tags: [ide, jetbrains, jetbrains-toolbox]
 
     - role: vendor/roles/visual-studio-code
