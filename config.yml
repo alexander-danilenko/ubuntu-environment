@@ -97,6 +97,7 @@ docksal:
 apps:
   jetbrains_toolbox:
     install: true
+    version: '2.0.3'
 
   visual_studio_code:
     install: true
